@@ -1,0 +1,106 @@
+<mat-toolbar color="primary" class="header">
+    <h1>Robert Helmick</h1>
+    <span fxFlex></span>
+    <div fxLayoutAlign="space-between center" fxShow="true" fxHide.lt-sm="true">
+        <a href="#bio">Bio</a>
+        <a href="#projects">Projects</a>
+        <a href="#work">Work Experience</a>
+        <a href="#education">Education</a>
+    </div>
+</mat-toolbar>
+
+<mat-card id="bio">
+    <mat-card-content>
+        <mat-card fxFlex="30" fxHide.lt-sm="true" id="bio">
+            <img src="../../../assets/img/Headshot.jpg" />
+        </mat-card>
+        <mat-card fxFlex class="content-text" fxLayoutAlign="start center">
+            <p>Vestibulum bibendum viverra odio, in faucibus massa vulputate eget. In non magna ipsum. Praesent gravida finibus euismod. Praesent consectetur at nunc et sodales. Vestibulum in mauris nec quam condimentum viverra vel ut nisl. Donec scelerisque
+                elit sit amet porta posuere. Donec velit diam, vulputate quis finibus quis, commodo vitae augue. In suscipit, lorem accumsan porta cursus, nisi augue maximus tellus, tempor vehicula eros nisl id urna. Vivamus tellus neque, sollicitudin
+                at ante in, finibus egestas velit.
+                <br>
+                <br> Quisque vulputate dolor mauris, et dapibus nunc congue id. Ut malesuada dictum magna. Sed commodo eget turpis eget euismod. Cras posuere orci vel odio feugiat, quis efficitur orci ullamcorper. Cras consequat cursus feugiat. Ut mollis
+                sapien id dui semper, sed dictum risus aliquam. Curabitur ut malesuada ex, et egestas magna. In hac habitasse platea dictumst. Morbi convallis elit in lacus cursus, in laoreet tellus faucibus. Sed sed lorem ullamcorper, sagittis metus
+                nec, scelerisque metus. Aliquam ut libero diam. Fusce non efficitur massa, non elementum lorem.</p>
+        </mat-card>
+    </mat-card-content>
+</mat-card>
+<mat-card id="projects">
+    <h1>Projects</h1>
+    <mat-card-content>
+        <mat-card fxFlex="30" class="projects-list-wrapper">
+            <mat-list>
+                <h3 mat-subheader>Projects</h3>
+                <mat-list-item *ngFor="let project of projects" title="Click to view project details" class="projects-list" (click)="setActive(project)" [class.active]="project === activeProject">
+                    <div fxFlex>
+                        <h4 mat-line>{{project.name}}</h4>
+                        <p mat-line> {{project.date}} </p>
+                    </div>
+                    <i class="material-icons" *ngIf="project === activeProject">keyboard_arrow_right</i>
+
+                    <mat-divider></mat-divider>
+                </mat-list-item>
+            </mat-list>
+        </mat-card>
+
+        <mat-card fxFlex color="accent">
+            <mat-card-title>{{activeProject.name}}</mat-card-title>
+            <div fxLayoutAlign="row">
+                <img src="../../../assets/img/comp-screen.png" />
+
+                <div class="content-text">
+                    <p>{{activeProject.description}}</p>
+                </div>
+            </div>
+        </mat-card>
+
+    </mat-card-content>
+</mat-card>
+
+<mat-card id="work">
+    <h1>Work Experience</h1>
+    <mat-card-content>
+        <mat-card fxFlex class="content-text" fxLayoutAlign="start center">
+
+            <p>Vestibulum bibendum viverra odio, in faucibus massa vulputate eget. In non magna ipsum. Praesent gravida finibus euismod. Praesent consectetur at nunc et sodales. Vestibulum in mauris nec quam condimentum viverra vel ut nisl. Donec scelerisque
+                elit sit amet porta posuere. Donec velit diam, vulputate quis finibus quis, commodo vitae augue. In suscipit, lorem accumsan porta cursus, nisi augue maximus tellus, tempor vehicula eros nisl id urna. Vivamus tellus neque, sollicitudin
+                at ante in, finibus egestas velit.
+                <br>
+                <br> Quisque vulputate dolor mauris, et dapibus nunc congue id. Ut malesuada dictum magna. Sed commodo eget turpis eget euismod. Cras posuere orci vel odio feugiat, quis efficitur orci ullamcorper. Cras consequat cursus feugiat. Ut mollis
+                sapien id dui semper, sed dictum risus aliquam. Curabitur ut malesuada ex, et egestas magna. In hac habitasse platea dictumst. Morbi convallis elit in lacus cursus, in laoreet tellus faucibus. Sed sed lorem ullamcorper, sagittis metus
+                nec, scelerisque metus. Aliquam ut libero diam. Fusce non efficitur massa, non elementum lorem.</p>
+        </mat-card>
+    </mat-card-content>
+</mat-card>
+
+<mat-card id="education">
+    <h1>Education</h1>
+    <mat-card-content>
+        <mat-card fxFlex class="content-text" fxLayoutAlign="start center">
+
+            <p>Vestibulum bibendum viverra odio, in faucibus massa vulputate eget. In non magna ipsum. Praesent gravida finibus euismod. Praesent consectetur at nunc et sodales. Vestibulum in mauris nec quam condimentum viverra vel ut nisl. Donec scelerisque
+                elit sit amet porta posuere. Donec velit diam, vulputate quis finibus quis, commodo vitae augue. In suscipit, lorem accumsan porta cursus, nisi augue maximus tellus, tempor vehicula eros nisl id urna. Vivamus tellus neque, sollicitudin
+                at ante in, finibus egestas velit.
+                <br>
+                <br> Quisque vulputate dolor mauris, et dapibus nunc congue id. Ut malesuada dictum magna. Sed commodo eget turpis eget euismod. Cras posuere orci vel odio feugiat, quis efficitur orci ullamcorper. Cras consequat cursus feugiat. Ut mollis
+                sapien id dui semper, sed dictum risus aliquam. Curabitur ut malesuada ex, et egestas magna. In hac habitasse platea dictumst. Morbi convallis elit in lacus cursus, in laoreet tellus faucibus. Sed sed lorem ullamcorper, sagittis metus
+                nec, scelerisque metus. Aliquam ut libero diam. Fusce non efficitur massa, non elementum lorem.</p>
+        </mat-card>
+
+    </mat-card-content>
+</mat-card>
+
+<div class="footer">
+    <ul fxLayout="row">
+        <li>
+            <a href="mailto:robert.helmick.08@gmail.com"><i class="fa fa-envelope-square" aria-hidden="true"></i></a>
+        </li>
+        <li>
+            <a href="https://github.com/roberthelmick08"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/in/roberthelmick08"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+        </li>
+    </ul>
+
+</div>

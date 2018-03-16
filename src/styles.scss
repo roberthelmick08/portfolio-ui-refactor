@@ -1,1 +1,87 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@import './palette.scss';
+@import '~material-design-icons/iconfont/material-icons.css';
+body {
+    font-family: 'Josefin Slab', serif;
+}
+
+p {
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+.content-text {
+    padding: 12px;
+}
+
+.header {
+    a {
+        font-size: 14px;
+        text-decoration: none;
+        color: white;
+        margin-right: 18px;
+        opacity: 0.8;
+    }
+    a:hover {
+        text-decoration: underline;
+        opacity: 1;
+    }
+}
+
+#bio {
+    img {
+        width: 100%;
+    }
+}
+
+#projects {
+    background-color: #40c4ff !important;
+    img {
+        width: 50%;
+        height: 65%;
+    }
+    .content-text {
+        padding-top: 0;
+    }
+    .projects-list {
+        cursor: pointer;
+    }
+    h4.mat-line {
+        margin: 8px 0 0 0;
+    }
+    .active {
+        color: rgba(0, 0, 0, .5);
+    }
+    mat-card-title {
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, .2);
+    }
+}
+
+#work {
+    background-color: #e64a19 !important;
+}
+
+#education {
+    background-color: #40c4ff !important;
+}
+
+.footer {
+    height: 45px;
+    width: 200px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    ul {
+        list-style: none;
+        margin: 0;
+        li {
+            font-size: 45px;
+            margin-right: 18px;
+        }
+    }
+}
