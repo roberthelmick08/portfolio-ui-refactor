@@ -4,6 +4,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home/home.component';
 import { AppMaterialModule } from '../app-material/app-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CommonModule,
     HomeRoutingModule,
     FlexLayoutModule,
-    AppMaterialModule
+    AppMaterialModule,
+    ScrollToModule.forRoot()
   ],
   declarations: [HomeComponent]
 })

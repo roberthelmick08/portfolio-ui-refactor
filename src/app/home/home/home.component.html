@@ -1,27 +1,28 @@
 <mat-toolbar color="primary" class="header">
     <h1>Robert Helmick</h1>
-    <span fxFlex></span>
+    <span fxFlex class="diag-line"></span>
     <div fxLayoutAlign="space-between center" fxShow="true" fxHide.lt-sm="true">
-        <a href="#bio">Bio</a>
-        <a href="#projects">Projects</a>
-        <a href="#work">Work Experience</a>
-        <a href="#education">Education</a>
+        <button mat-button [ngx-scroll-to]="'#bio'" [ngx-scroll-to-easing]="'easeInOutQuad'">Bio</button>
+        <button mat-button [ngx-scroll-to]="'#projects'" [ngx-scroll-to-easing]="'easeInOutQuad'">Projects</button>
+        <button mat-button [ngx-scroll-to]="'#work'" [ngx-scroll-to-easing]="'easeInOutQuad'">Work Experience</button>
+        <button mat-button [ngx-scroll-to]="'#education'" [ngx-scroll-to-easing]="'easeInOutQuad'">Education</button>
     </div>
 </mat-toolbar>
 
 <mat-card id="bio">
     <mat-card-content>
-        <mat-card fxFlex="30" fxHide.lt-sm="true" id="bio">
+        <mat-card fxFlex="30" fxHide.lt-sm="true" class="bio-img-wrapper">
             <img src="../../../assets/img/Headshot.jpg" />
         </mat-card>
         <mat-card fxFlex class="content-text" fxLayoutAlign="start center">
-            <p>Vestibulum bibendum viverra odio, in faucibus massa vulputate eget. In non magna ipsum. Praesent gravida finibus euismod. Praesent consectetur at nunc et sodales. Vestibulum in mauris nec quam condimentum viverra vel ut nisl. Donec scelerisque
-                elit sit amet porta posuere. Donec velit diam, vulputate quis finibus quis, commodo vitae augue. In suscipit, lorem accumsan porta cursus, nisi augue maximus tellus, tempor vehicula eros nisl id urna. Vivamus tellus neque, sollicitudin
-                at ante in, finibus egestas velit.
-                <br>
-                <br> Quisque vulputate dolor mauris, et dapibus nunc congue id. Ut malesuada dictum magna. Sed commodo eget turpis eget euismod. Cras posuere orci vel odio feugiat, quis efficitur orci ullamcorper. Cras consequat cursus feugiat. Ut mollis
-                sapien id dui semper, sed dictum risus aliquam. Curabitur ut malesuada ex, et egestas magna. In hac habitasse platea dictumst. Morbi convallis elit in lacus cursus, in laoreet tellus faucibus. Sed sed lorem ullamcorper, sagittis metus
-                nec, scelerisque metus. Aliquam ut libero diam. Fusce non efficitur massa, non elementum lorem.</p>
+            <mat-card-content>
+                <p>
+                    <span class="bio-start-span">I <span class="bio-start-span-2">am</span></span> an experienced multi-lingual professional with international experience in software engineering and project management, and a strong passion for front-end
+                    development!
+                    <br><br>On any given day you can find me taking a bike ride, watching my favorite hockey teams lose, talking to my houseplants, baking bread, or reading a book in the park.
+                    <br><br>Outside of development, I also pride myself in my work as a community organizer and activist.
+                </p>
+            </mat-card-content>
         </mat-card>
     </mat-card-content>
 </mat-card>
@@ -30,7 +31,6 @@
     <mat-card-content>
         <mat-card fxFlex="30" class="projects-list-wrapper">
             <mat-list>
-                <h3 mat-subheader>Projects</h3>
                 <mat-list-item *ngFor="let project of projects" title="Click to view project details" class="projects-list" (click)="setActive(project)" [class.active]="project === activeProject">
                     <div fxFlex>
                         <h4 mat-line>{{project.name}}</h4>
@@ -60,15 +60,26 @@
 <mat-card id="work">
     <h1>Work Experience</h1>
     <mat-card-content>
-        <mat-card fxFlex class="content-text" fxLayoutAlign="start center">
-
-            <p>Vestibulum bibendum viverra odio, in faucibus massa vulputate eget. In non magna ipsum. Praesent gravida finibus euismod. Praesent consectetur at nunc et sodales. Vestibulum in mauris nec quam condimentum viverra vel ut nisl. Donec scelerisque
-                elit sit amet porta posuere. Donec velit diam, vulputate quis finibus quis, commodo vitae augue. In suscipit, lorem accumsan porta cursus, nisi augue maximus tellus, tempor vehicula eros nisl id urna. Vivamus tellus neque, sollicitudin
-                at ante in, finibus egestas velit.
-                <br>
-                <br> Quisque vulputate dolor mauris, et dapibus nunc congue id. Ut malesuada dictum magna. Sed commodo eget turpis eget euismod. Cras posuere orci vel odio feugiat, quis efficitur orci ullamcorper. Cras consequat cursus feugiat. Ut mollis
-                sapien id dui semper, sed dictum risus aliquam. Curabitur ut malesuada ex, et egestas magna. In hac habitasse platea dictumst. Morbi convallis elit in lacus cursus, in laoreet tellus faucibus. Sed sed lorem ullamcorper, sagittis metus
-                nec, scelerisque metus. Aliquam ut libero diam. Fusce non efficitur massa, non elementum lorem.</p>
+        <mat-card class="content-text">
+            <mat-card-content>
+                <mat-list>
+                    <mat-list-item *ngFor="let job of jobs">
+                        <div fxLayout="column" fxFlex="29" class="job-details-column">
+                            <h2>{{job.name}}</h2>
+                            <h3>{{job.title}}</h3>
+                            <h5>{{job.startDate}} – {{job.endDate}}</h5>
+                            <h5>{{job.location}}</h5>
+                        </div>
+                        <mat-list class="description-list">
+                            <mat-list-item *ngFor="let desc of job.description">
+                                <mat-icon matListIcon>keyboard_arrow_right</mat-icon>
+                                {{desc}}
+                            </mat-list-item>
+                        </mat-list>
+                        <mat-divider></mat-divider>
+                    </mat-list-item>
+                </mat-list>
+            </mat-card-content>
         </mat-card>
     </mat-card-content>
 </mat-card>
@@ -90,16 +101,22 @@
     </mat-card-content>
 </mat-card>
 
+<mat-card id="footer-card">
+    <mat-card-content fxLayoutAlign="center center">
+        <p>Robert Helmick {{date | date:'yyyy'}}</p>
+    </mat-card-content>
+</mat-card>
+
 <div class="footer">
     <ul fxLayout="row">
         <li>
-            <a href="mailto:robert.helmick.08@gmail.com"><i class="fa fa-envelope-square" aria-hidden="true"></i></a>
+            <a href="mailto:robert.helmick.08@gmail.com" title="Email"><i class="fa fa-envelope-square" aria-hidden="true"></i></a>
         </li>
         <li>
-            <a href="https://github.com/roberthelmick08"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+            <a href="https://github.com/roberthelmick08" title="Github"><i class="fa fa-github-square" aria-hidden="true"></i></a>
         </li>
         <li>
-            <a href="https://www.linkedin.com/in/roberthelmick08"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/roberthelmick08" title="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
         </li>
     </ul>
 

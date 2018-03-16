@@ -3,85 +3,158 @@
 @import '~material-design-icons/iconfont/material-icons.css';
 body {
     font-family: 'Josefin Slab', serif;
-}
-
-p {
-    margin: 0;
-}
-
-h1 {
-    text-align: center;
-    color: white;
-}
-
-.content-text {
-    padding: 12px;
-}
-
-.header {
-    a {
-        font-size: 14px;
-        text-decoration: none;
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(200px);
+    p {
+        margin: 0;
+        font-size: 20px;
+        line-height: 25px;
+    }
+    h1 {
+        text-align: center;
+        font-family: courier !important;
         color: white;
-        margin-right: 18px;
-        opacity: 0.8;
+        text-shadow: 1px 2px 6px rgba(75, 75, 75, .5);
     }
-    a:hover {
-        text-decoration: underline;
-        opacity: 1;
-    }
-}
-
-#bio {
-    img {
-        width: 100%;
-    }
-}
-
-#projects {
-    background-color: #40c4ff !important;
-    img {
-        width: 50%;
-        height: 65%;
+    h2,
+    h3,
+    h4,
+    h5 {
+        margin: 8px 0;
     }
     .content-text {
-        padding-top: 0;
+        padding: 12px;
     }
-    .projects-list {
-        cursor: pointer;
-    }
-    h4.mat-line {
-        margin: 8px 0 0 0;
-    }
-    .active {
-        color: rgba(0, 0, 0, .5);
-    }
-    mat-card-title {
-        text-align: center;
-        border-bottom: 1px solid rgba(0, 0, 0, .2);
-    }
-}
-
-#work {
-    background-color: #e64a19 !important;
-}
-
-#education {
-    background-color: #40c4ff !important;
-}
-
-.footer {
-    height: 45px;
-    width: 200px;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    ul {
-        list-style: none;
-        margin: 0;
-        li {
-            font-size: 45px;
+    .header {
+        h1 {
+            font-weight: bold;
+        }
+        button {
+            font-size: 14px;
+            color: white;
             margin-right: 18px;
+            border-bottom: 2px solid transparent;
+        }
+        .mat-button:hover {
+            color: #40c4ff;
+            border-bottom: 2px solid #40c4ff;
+            .mat-button-focus-overlay {
+                opacity: 0;
+            }
+        }
+        .diag-line {
+            background-color: #40c4ff;
+            transform: skew(-80deg, 0deg);
+            height: 100%;
+            margin: 0 6% 0 10%;
+        }
+    }
+    #bio {
+        background-color: rgba(75, 75, 75, .5);
+        img {
+            width: 100%;
+            border: 1px solid white;
+        }
+        .bio-img-wrapper {
+            background-color: #e64a19;
+        }
+        p {
+            text-align: justify;
+            line-height: 30px;
+        }
+        .bio-start-span {
+            font-size: 4em;
+            color: #e64a19;
+            font-family: courier;
+            word-spacing: -34px;
+            margin-right: 12px;
+            .bio-start-span-2 {
+                color: #40c4ff;
+            }
+        }
+    }
+    #projects {
+        background-color: #40c4ff;
+        img {
+            width: 50%;
+            height: 65%;
+        }
+        .content-text {
+            padding-top: 0;
+        }
+        .projects-list {
+            cursor: pointer;
+        }
+        h4.mat-line {
+            margin: 8px 0 0 0;
+            color: #e64a19;
+        }
+        .active {
+            color: rgba(0, 0, 0, .5);
+        }
+        mat-list {
+            margin-top: 37px;
+        }
+        mat-card-title {
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, .2);
+            color: #e64a19;
+        }
+    }
+    #work {
+        background-color: rgba(75, 75, 75, .5);
+        .mat-list .mat-list-item {
+            height: 100%;
+        }
+        .description-list {
+            border-left: 1px solid rgba(75, 75, 75, .2);
+        }
+        .job-title-small {
+            font-size: .7em;
+        }
+        .job-details-column {
+            color: rgba(75, 75, 75, .5);
+            h2 {
+                color: #e64a19;
+                margin: 8px 0 4px 0;
+            }
+            h3 {
+                color: #40c4ff;
+                margin: 0 0 8px 16px;
+            }
+            h5 {
+                margin: 0 0 8px 16px;
+            }
+        }
+    }
+    #education {
+        background-color: #e64a19;
+    }
+    #footer-card {
+        color: white;
+        background-color: #40c4ff;
+        p {
+            line-height: 12px;
+            font-size: initial;
+        }
+    }
+    .footer {
+        height: 64px;
+        width: 200px;
+        position: fixed;
+        bottom: 0;
+        right: 8px;
+        ul {
+            list-style: none;
+            margin: 0;
+            li {
+                font-size: 45px;
+                margin-right: 18px;
+                a {
+                    color: white;
+                    text-shadow: 1px 2px 6px rgba(75, 75, 75, .5);
+                }
+            }
         }
     }
 }
