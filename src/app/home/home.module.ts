@@ -6,7 +6,6 @@ import { AppMaterialModule } from '../app-material/app-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
-
 @NgModule({
   imports: [
     CommonModule,

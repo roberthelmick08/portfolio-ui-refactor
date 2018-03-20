@@ -1,4 +1,3 @@
-<!-- <mat-toolbar color="primary" class="header"> -->
 <div class="header">
     <ul>
         <li class="nav-bio" [class.nav-active]="false"><a [ngx-scroll-to]="'#bio'" [ngx-scroll-to-easing]="'easeInOutQuad'">Robert Helmick</a></li>
@@ -7,15 +6,6 @@
         <li class="nav-education" [class.nav-active]="false"><a [ngx-scroll-to]="'#education'" [ngx-scroll-to-easing]="'easeInOutQuad'">Education</a></li>
     </ul>
 </div>
-<!-- <h1>Robert Helmick</h1>
-    <span fxFlex class="diag-line"></span>
-    <div fxLayoutAlign="space-between center" fxShow="true" fxHide.lt-sm="true">
-        <button mat-button [ngx-scroll-to]="'#bio'" [ngx-scroll-to-easing]="'easeInOutQuad'">Bio</button>
-        <button mat-button [ngx-scroll-to]="'#projects'" [ngx-scroll-to-easing]="'easeInOutQuad'">Projects</button>
-        <button mat-button [ngx-scroll-to]="'#work'" [ngx-scroll-to-easing]="'easeInOutQuad'">Work Experience</button>
-        <button mat-button [ngx-scroll-to]="'#education'" [ngx-scroll-to-easing]="'easeInOutQuad'">Education</button>
-    </div> -->
-<!-- </mat-toolbar> -->
 
 <mat-card id="bio">
     <mat-card-content>
@@ -34,7 +24,7 @@
 <mat-card id="projects">
     <h1>Projects</h1>
     <mat-card-content>
-        <mat-card fxFlex="30" class="projects-list-wrapper">
+        <mat-card fxFlex="30" class="projects-list-wrapper" fxLayoutAlign="start center">
             <mat-list>
                 <mat-list-item *ngFor="let project of projects" title="Click to view project details" class="projects-list" (click)="setActive(project)" [class.active]="project === activeProject">
                     <div fxFlex>
@@ -50,12 +40,23 @@
 
         <mat-card fxFlex color="accent">
             <mat-card-title>{{activeProject.name}}</mat-card-title>
-            <div fxLayoutAlign="row">
-                <img src="../../../assets/img/comp-screen.png" />
+            <div fxLayout="row" fxLayout.lt-md="column">
+                <mat-card fxFlex="50" class="comp-screen-wrapper">
+                    <div class="comp-img-wrapper">
+                        <img src="../../../assets/img/comp-screen.png" class="computer-screen-img" />
+                    </div>
 
-                <div class="content-text">
+                    <div id="screenshot-wrapper">
+                        <img src="../../../assets/img/digit1.png" class="computer-screen-img" />
+                    </div>
+                </mat-card>
+
+
+                <mat-card fxFlex="50" class="content-text">
+                    <span *ngFor="let tech of activeProject.techsUsed">{{tech}} </span>
+                    <mat-divider></mat-divider>
                     <p>{{activeProject.description}}</p>
-                </div>
+                </mat-card>
             </div>
         </mat-card>
 

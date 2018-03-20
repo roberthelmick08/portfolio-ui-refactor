@@ -1,11 +1,15 @@
+// medium screen size max 959px
 @import '~@angular/material/theming';
 @import './palette.scss';
 @import '~material-design-icons/iconfont/material-icons.css';
 body {
     margin: 0;
     font-family: 'Josefin Slab', serif;
-    scroll-snap-type: mandatory;
-    scroll-snap-points-y: repeat(200px);
+    margin: 0;
+    img {
+        height: 100%;
+        width: 100%;
+    }
     p {
         margin: 0;
         font-size: 20px;
@@ -22,6 +26,9 @@ body {
     h4,
     h5 {
         margin: 8px 0;
+    }
+    .mat-list .mat-list-item {
+        height: 100%;
     }
     .content-text {
         padding: 12px;
@@ -87,6 +94,7 @@ body {
         }
     }
     #bio {
+        margin-top: 60px;
         background-color: rgba(75, 75, 75, .5);
         padding: 36px 24px 24px 24px;
         img {
@@ -98,7 +106,8 @@ body {
         }
         p {
             text-align: justify;
-            line-height: 30px;
+            line-height: 1.5em;
+            font-size: 1.5em;
         }
         .bio-start-span {
             font-size: 4em;
@@ -113,9 +122,25 @@ body {
     }
     #projects {
         background-color: #40c4ff;
-        img {
-            width: 50%;
-            height: 65%;
+        .comp-screen-wrapper {
+            // width: 50%;
+            // height: 65%;
+            z-index: 1;
+            mat-card {
+                box-shadow: none;
+            }
+            @media (max-width: 959px) {
+                width: 100%
+            }
+            #screenshot-wrapper {
+                position: absolute;
+                z-index: -1;
+                top: 12.7%;
+                bottom: 32%;
+                left: 11%;
+                right: 10.4%;
+                @media (max-width: 959px) {}
+            }
         }
         .content-text {
             padding-top: 0;
@@ -126,12 +151,14 @@ body {
         h4.mat-line {
             margin: 8px 0 0 0;
             color: #e64a19;
+            white-space: normal;
         }
         .active {
             color: rgba(0, 0, 0, .5);
         }
         mat-list {
             margin-top: 37px;
+            width: 100%;
         }
         mat-card-title {
             text-align: center;
@@ -177,7 +204,7 @@ body {
         }
     }
     .footer {
-        height: 64px;
+        height: 56px;
         width: 200px;
         position: fixed;
         bottom: 0;
