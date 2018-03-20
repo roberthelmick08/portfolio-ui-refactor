@@ -1,13 +1,21 @@
-<mat-toolbar color="primary" class="header">
-    <h1>Robert Helmick</h1>
+<!-- <mat-toolbar color="primary" class="header"> -->
+<div class="header">
+    <ul>
+        <li class="nav-bio" [class.nav-active]="false"><a [ngx-scroll-to]="'#bio'" [ngx-scroll-to-easing]="'easeInOutQuad'">Robert Helmick</a></li>
+        <li class="nav-projects" [class.nav-active]="false"><a [ngx-scroll-to]="'#projects'" [ngx-scroll-to-easing]="'easeInOutQuad'">Projects</a></li>
+        <li class="nav-work" [class.nav-active]="false"><a [ngx-scroll-to]="'#work'" [ngx-scroll-to-easing]="'easeInOutQuad'">Work Experience</a></li>
+        <li class="nav-education" [class.nav-active]="false"><a [ngx-scroll-to]="'#education'" [ngx-scroll-to-easing]="'easeInOutQuad'">Education</a></li>
+    </ul>
+</div>
+<!-- <h1>Robert Helmick</h1>
     <span fxFlex class="diag-line"></span>
     <div fxLayoutAlign="space-between center" fxShow="true" fxHide.lt-sm="true">
         <button mat-button [ngx-scroll-to]="'#bio'" [ngx-scroll-to-easing]="'easeInOutQuad'">Bio</button>
         <button mat-button [ngx-scroll-to]="'#projects'" [ngx-scroll-to-easing]="'easeInOutQuad'">Projects</button>
         <button mat-button [ngx-scroll-to]="'#work'" [ngx-scroll-to-easing]="'easeInOutQuad'">Work Experience</button>
         <button mat-button [ngx-scroll-to]="'#education'" [ngx-scroll-to-easing]="'easeInOutQuad'">Education</button>
-    </div>
-</mat-toolbar>
+    </div> -->
+<!-- </mat-toolbar> -->
 
 <mat-card id="bio">
     <mat-card-content>
@@ -17,10 +25,7 @@
         <mat-card fxFlex class="content-text" fxLayoutAlign="start center">
             <mat-card-content>
                 <p>
-                    <span class="bio-start-span">I <span class="bio-start-span-2">am</span></span> an experienced multi-lingual professional with international experience in software engineering and project management, and a strong passion for front-end
-                    development!
-                    <br><br>On any given day you can find me taking a bike ride, watching my favorite hockey teams lose, talking to my houseplants, baking bread, or reading a book in the park.
-                    <br><br>Outside of development, I also pride myself in my work as a community organizer and activist.
+                    <span class="bio-start-span">I <span class="bio-start-span-2">am</span></span> a passionate front end developer! I'm currently an Associate Software Engineer with Infosys at Toyota.
                 </p>
             </mat-card-content>
         </mat-card>

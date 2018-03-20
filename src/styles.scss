@@ -2,6 +2,7 @@
 @import './palette.scss';
 @import '~material-design-icons/iconfont/material-icons.css';
 body {
+    margin: 0;
     font-family: 'Josefin Slab', serif;
     scroll-snap-type: mandatory;
     scroll-snap-points-y: repeat(200px);
@@ -26,31 +27,68 @@ body {
         padding: 12px;
     }
     .header {
-        h1 {
-            font-weight: bold;
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        z-index: 3;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+        background: linear-gradient(to bottom, white 30%, transparent);
+        ul,
+        li,
+        a {
+            display: inline-block;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            font-size: 24px;
         }
-        button {
-            font-size: 14px;
-            color: white;
-            margin-right: 18px;
-            border-bottom: 2px solid transparent;
-        }
-        .mat-button:hover {
-            color: #40c4ff;
-            border-bottom: 2px solid #40c4ff;
-            .mat-button-focus-overlay {
-                opacity: 0;
+        li {
+            transform: skewX(-20deg);
+            -ms-transform: skewX(-20deg);
+            -webkit-transform: skewX(-20deg);
+            opacity: 0.7;
+            cursor: pointer;
+            a {
+                padding: 3px 15px 3px 10px;
+                text-decoration: none;
+                transform: skewX(20deg);
+                -ms-transform: skewX(20deg);
+                -webkit-transform: skewX(20deg);
+                color: white;
             }
         }
-        .diag-line {
+        .nav-bio {
+            background-color: #e64a19;
+        }
+        .nav-projects {
             background-color: #40c4ff;
-            transform: skew(-80deg, 0deg);
+        }
+        .nav-work {
+            background-color: rgba(75, 75, 75, 0.5);
+        }
+        .nav-education {
+            background-color: #e64a19;
+        }
+        li:nth-child(1):before {
+            content: "";
+            position: absolute;
+            width: 15px;
             height: 100%;
-            margin: 0 6% 0 10%;
+            background: #e64a19;
+            -webkit-transform: skewX(20deg);
+            left: -7px;
+        }
+        li:hover,
+        .nav-active {
+            opacity: 1;
         }
     }
     #bio {
         background-color: rgba(75, 75, 75, .5);
+        padding: 36px 24px 24px 24px;
         img {
             width: 100%;
             border: 1px solid white;
