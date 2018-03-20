@@ -1,10 +1,14 @@
+// medium screen size max 959px
 @import '~@angular/material/theming';
 @import './palette.scss';
 @import '~material-design-icons/iconfont/material-icons.css';
 body {
     font-family: 'Josefin Slab', serif;
-    scroll-snap-type: mandatory;
-    scroll-snap-points-y: repeat(200px);
+    margin:0;
+    img{
+        height:100%;
+        width: 100%;
+    }
     p {
         margin: 0;
         font-size: 20px;
@@ -22,10 +26,17 @@ body {
     h5 {
         margin: 8px 0;
     }
+    .mat-list .mat-list-item{
+        height: 100%;
+    }
     .content-text {
         padding: 12px;
     }
     .header {
+        position:fixed;
+        top:0;
+        border-bottom:4px solid #40c4ff;
+        z-index: 2;
         h1 {
             font-weight: bold;
         }
@@ -42,14 +53,10 @@ body {
                 opacity: 0;
             }
         }
-        .diag-line {
-            background-color: #40c4ff;
-            transform: skew(-80deg, 0deg);
-            height: 100%;
-            margin: 0 6% 0 10%;
-        }
     }
+
     #bio {
+        margin-top: 60px;
         background-color: rgba(75, 75, 75, .5);
         img {
             width: 100%;
@@ -60,7 +67,8 @@ body {
         }
         p {
             text-align: justify;
-            line-height: 30px;
+            line-height: 1.5em;
+            font-size: 1.5em;
         }
         .bio-start-span {
             font-size: 4em;
@@ -75,9 +83,28 @@ body {
     }
     #projects {
         background-color: #40c4ff;
-        img {
-            width: 50%;
-            height: 65%;
+        .comp-screen-wrapper {
+            // width: 50%;
+            // height: 65%;
+            z-index:1;
+            mat-card{
+                box-shadow: none;
+            }
+            @media (max-width: 959px){
+                width:100%
+            }
+            #screenshot-wrapper{
+                position: absolute;
+                z-index: -1;
+                top: 12.7%;
+                bottom: 32%;
+                left: 11%;
+                right: 10.4%;
+                @media (max-width: 959px){
+            }
+        }
+
+
         }
         .content-text {
             padding-top: 0;
@@ -88,13 +115,16 @@ body {
         h4.mat-line {
             margin: 8px 0 0 0;
             color: #e64a19;
+            white-space: normal;
         }
         .active {
             color: rgba(0, 0, 0, .5);
         }
         mat-list {
             margin-top: 37px;
+            width:100%;
         }
+
         mat-card-title {
             text-align: center;
             border-bottom: 1px solid rgba(0, 0, 0, .2);
@@ -139,7 +169,7 @@ body {
         }
     }
     .footer {
-        height: 64px;
+        height: 56px;
         width: 200px;
         position: fixed;
         bottom: 0;

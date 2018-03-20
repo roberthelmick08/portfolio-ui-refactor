@@ -1,6 +1,6 @@
 <mat-toolbar color="primary" class="header">
     <h1>Robert Helmick</h1>
-    <span fxFlex class="diag-line"></span>
+    <span fxFlex></span>
     <div fxLayoutAlign="space-between center" fxShow="true" fxHide.lt-sm="true">
         <button mat-button [ngx-scroll-to]="'#bio'" [ngx-scroll-to-easing]="'easeInOutQuad'">Bio</button>
         <button mat-button [ngx-scroll-to]="'#projects'" [ngx-scroll-to-easing]="'easeInOutQuad'">Projects</button>
@@ -19,8 +19,8 @@
                 <p>
                     <span class="bio-start-span">I <span class="bio-start-span-2">am</span></span> an experienced multi-lingual professional with international experience in software engineering and project management, and a strong passion for front-end
                     development!
-                    <br><br>On any given day you can find me taking a bike ride, watching my favorite hockey teams lose, talking to my houseplants, baking bread, or reading a book in the park.
-                    <br><br>Outside of development, I also pride myself in my work as a community organizer and activist.
+                    <!-- <br><br>On any given day you can find me taking a bike ride, watching my favorite hockey teams lose, talking to my houseplants, baking bread, or reading a book in the park. -->
+                    <!-- <br><br>Outside of development, I also pride myself in my work as a community organizer and activist. -->
                 </p>
             </mat-card-content>
         </mat-card>
@@ -29,7 +29,7 @@
 <mat-card id="projects">
     <h1>Projects</h1>
     <mat-card-content>
-        <mat-card fxFlex="30" class="projects-list-wrapper">
+        <mat-card fxFlex="30" class="projects-list-wrapper" fxLayoutAlign="start center">
             <mat-list>
                 <mat-list-item *ngFor="let project of projects" title="Click to view project details" class="projects-list" (click)="setActive(project)" [class.active]="project === activeProject">
                     <div fxFlex>
@@ -45,12 +45,23 @@
 
         <mat-card fxFlex color="accent">
             <mat-card-title>{{activeProject.name}}</mat-card-title>
-            <div fxLayoutAlign="row">
-                <img src="../../../assets/img/comp-screen.png" />
+            <div fxLayout="row" fxLayout.lt-md="column">
+                <mat-card fxFlex="50" class="comp-screen-wrapper">  
+                    <div class="comp-img-wrapper">
+                            <img src="../../../assets/img/comp-screen.png" class="computer-screen-img"/>
+                    </div>
 
-                <div class="content-text">
+                    <div id="screenshot-wrapper">
+                            <img src="../../../assets/img/digit1.png" class="computer-screen-img"/>
+                    </div>
+                </mat-card>
+
+
+                <mat-card fxFlex="50" class="content-text">
+                    <span *ngFor="let tech of activeProject.techsUsed">{{tech}} </span>
+                    <mat-divider></mat-divider>
                     <p>{{activeProject.description}}</p>
-                </div>
+                </mat-card>
             </div>
         </mat-card>
 
