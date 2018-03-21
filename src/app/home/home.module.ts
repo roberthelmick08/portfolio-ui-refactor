@@ -14,6 +14,8 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
     AppMaterialModule,
     ScrollToModule.forRoot()
   ],
-  declarations: [HomeComponent]
+  declarations: [ 
+    HomeComponent,
+  ]
 })
 export class HomeModule { }

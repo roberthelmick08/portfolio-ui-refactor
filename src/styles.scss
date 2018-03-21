@@ -1,11 +1,11 @@
 // medium screen size max 959px
 @import '~@angular/material/theming';
-@import './palette.scss';
 @import '~material-design-icons/iconfont/material-icons.css';
 * {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
+
 body {
     img {
         height: 100%;
@@ -24,22 +24,19 @@ body {
     mat-card-title.mat-card-title {
         font-family: 'Montserrat', sans-serif;
     }
-
-    h1{
-        color:white;
-        text-align:center;
+    h1 {
+        color: white;
+        text-align: center;
         margin-bottom: 24px;
     }
-
     mat-card {
         .mat-list .mat-list-item {
             height: 100%;
         }
     }
-    mat-divider.mat-divider{
+    mat-divider.mat-divider {
         border-bottom: 1px solid rgba(64, 196, 255, 0.5);
     }
-
     .content-text {
         padding: 12px;
     }
@@ -69,9 +66,9 @@ body {
                 transform: skewX(20deg);
                 -ms-transform: skewX(20deg);
                 -webkit-transform: skewX(20deg);
-                i{
+                i {
                     color: white;
-                    font-size:1.5em;
+                    font-size: 1.5em;
                 }
             }
         }
@@ -90,35 +87,40 @@ body {
         }
     }
     #bio {
-        background: url('../src/assets/img/appalachia.jpg') no-repeat fixed; 
+        background: url('../src/assets/img/appalachia.jpg') no-repeat fixed;
         background-size: cover;
         height: 100vh;
-        padding:0;
-        .opacity-filter{
-            background-color:rgba(255,255,255,0.2);
-            height:100%;
-            width:100%;
+        padding: 0;
+        .opacity-filter {
+            background-color: rgba(255, 255, 255, 0.2);
+            height: 100%;
+            width: 100%;
         }
-        .title-wrapper{
+        .title-wrapper {
             color: white;
-            margin-right:24px;
+            margin-right: 24px;
             padding-right: 24px;
             text-align: right;
             word-wrap: break-word;
-            margin-top: 35%;
+            margin-top: 55vh;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
             border-right: 4px solid #e64a19;
             font-size: 2.5em;
-            h1{
+            h1 {
                 letter-spacing: 18px;
                 text-align: right;
             }
-            h2{
-                font-size:1em;
+            h2 {
+                font-size: 1em;
+                display: inline-block;
+            }
+            .typed-cursor {
+                color: #e64a19;
             }
         }
     }
     #projects {
-        background-color: rgb(75,75,75);
+        background-color: rgb(75, 75, 75);
         .comp-screen-wrapper {
             z-index: 1;
             #screenshot-wrapper {
@@ -130,8 +132,8 @@ body {
                 right: 7.4%;
             }
         }
-        .projects-list-wrapper{
-            padding-right:0;
+        .projects-list-wrapper {
+            padding-right: 0;
             .projects-list {
                 cursor: pointer;
                 color: white;
@@ -142,11 +144,10 @@ body {
                 }
             }
         }
-
         .active {
-            color: rgba(255,255,255, .5);
+            color: rgba(255, 255, 255, .5);
         }
-        mat-card.mat-card{
+        mat-card.mat-card {
             box-shadow: none;
             background: transparent;
         }
@@ -161,7 +162,7 @@ body {
         }
     }
     #work {
-        background-color: rgb(75, 75, 75);
+        background-color: #e64a19;
         .mat-list .mat-list-item {
             height: 100%;
         }
@@ -178,7 +179,7 @@ body {
                 margin: 8px 0 4px 0;
             }
             h3 {
-                color:rgb(64, 196, 255);
+                color: rgb(64, 196, 255);
                 margin: 0 0 8px 16px;
             }
             h5 {
@@ -187,14 +188,6 @@ body {
         }
     }
     #education {
-        background-color: #e64a19;
-    }
-    #footer-card {
-        color: white;
-        background-color: rgb(64, 196, 255);
-        p {
-            line-height: 12px;
-            font-size: initial;
-        }
+        background-color: rgb(75, 75, 75);
     }
 }
