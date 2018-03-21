@@ -1,6 +1,5 @@
 import { Component, OnInit, HostListener} from '@angular/core';
 import { Project } from '../../services/model/Project';
-import { ICarouselConfig, AnimationConfig } from 'angular4-carousel';
 
 @Component({
   selector: 'app-home',
@@ -44,20 +43,8 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-
-    // setInterval(() => {
-      var compImg = document.getElementById("computer-screen-img");
-      console.log(compImg.offsetWidth);
-      console.log(compImg.offsetHeight); 
-      // this.myStyles = {
-      //   "height": <any>"'" + compImg.offsetHeight - 40+ "px'",
-      //   "width": <any>"'" + compImg.offsetWidth - 40+ "px'",
-      // };
-      // document.getElementById("screenshot-wrapper").setAttribute("style", "height: calc(" + compImg.offsetHeight + "px - 8%) !important");  
-      //   document.getElementById("screenshot-wrapper").setAttribute("style", "width: calc(" + compImg.offsetWidth + "px - 8%) !important");
-    // }, 200);
-  }
+  ngOnInit() {}
+  
   setActive(project) {
     this.activeProject = project;
   }

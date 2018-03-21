@@ -2,60 +2,65 @@
 @import '~@angular/material/theming';
 @import './palette.scss';
 @import '~material-design-icons/iconfont/material-icons.css';
+* {
+    margin:0;
+    padding:0;
+}
 body {
-    margin: 0;
-    font-family: 'Josefin Slab', serif;
-    margin: 0;
     img {
         height: 100%;
         width: 100%;
     }
     p {
-        margin: 0;
         font-size: 20px;
         line-height: 25px;
     }
-    h1 {
-        text-align: center;
-        font-family: courier !important;
-        color: white;
-        text-shadow: 1px 2px 6px rgba(75, 75, 75, .5);
-    }
+    h1,
     h2,
     h3,
     h4,
-    h5 {
-        margin: 8px 0;
+    h5,
+    h6,
+    mat-card-title.mat-card-title {
+        font-family: 'Montserrat', sans-serif;
     }
-    .mat-list .mat-list-item {
-        height: 100%;
+
+    h1{
+        color:white;
+        text-align:center;
+        margin-bottom: 24px;
     }
+
+    mat-card {
+        .mat-list .mat-list-item {
+            height: 100%;
+        }
+    }
+    mat-divider.mat-divider{
+        border-bottom: 1px solid rgba(64, 196, 255, 0.5);
+    }
+
     .content-text {
         padding: 12px;
     }
     .header {
-        margin: 0;
-        padding: 0;
         position: fixed;
         z-index: 3;
         top: 0;
         left: 0;
         width: 100%;
-        background: white;
-        background: linear-gradient(to bottom, white 30%, transparent);
         ul,
         li,
         a {
             display: inline-block;
             text-align: center;
-            margin: 0;
-            padding: 0;
-            font-size: 24px;
         }
         li {
             transform: skewX(-20deg);
             -ms-transform: skewX(-20deg);
             -webkit-transform: skewX(-20deg);
+            background-color: #e64a19;
+            color: white;
             opacity: 0.7;
             cursor: pointer;
             a {
@@ -64,20 +69,15 @@ body {
                 transform: skewX(20deg);
                 -ms-transform: skewX(20deg);
                 -webkit-transform: skewX(20deg);
-                color: white;
+                i{
+                    color: white;
+                    font-size:1.5em;
+                }
             }
         }
-        .nav-bio {
-            background-color: #e64a19;
-        }
-        .nav-projects {
-            background-color: #40c4ff;
-        }
-        .nav-work {
-            background-color: rgba(75, 75, 75, 0.5);
-        }
-        .nav-education {
-            background-color: #e64a19;
+        li:hover,
+        .nav-active {
+            opacity: 1;
         }
         li:nth-child(1):before {
             content: "";
@@ -88,103 +88,97 @@ body {
             -webkit-transform: skewX(20deg);
             left: -7px;
         }
-        li:hover,
-        .nav-active {
-            opacity: 1;
-        }
     }
     #bio {
-        margin-top: 60px;
-        background-color: rgba(75, 75, 75, .5);
-        padding: 36px 24px 24px 24px;
-        img {
-            width: 100%;
-            border: 1px solid white;
+        background: url('../src/assets/img/appalachia.jpg') no-repeat fixed; 
+        background-size: cover;
+        height: 100vh;
+        padding:0;
+        .opacity-filter{
+            background-color:rgba(255,255,255,0.2);
+            height:100%;
+            width:100%;
         }
-        .bio-img-wrapper {
-            background-color: #e64a19;
-        }
-        p {
-            text-align: justify;
-            line-height: 1.5em;
-            font-size: 1.5em;
-        }
-        .bio-start-span {
-            font-size: 4em;
-            color: #e64a19;
-            font-family: courier;
-            word-spacing: -34px;
-            margin-right: 12px;
-            .bio-start-span-2 {
-                color: #40c4ff;
+        .title-wrapper{
+            color: white;
+            margin-right:24px;
+            padding-right: 24px;
+            text-align: right;
+            word-wrap: break-word;
+            margin-top: 35%;
+            border-right: 4px solid #e64a19;
+            font-size: 2.5em;
+            h1{
+                letter-spacing: 18px;
+                text-align: right;
+            }
+            h2{
+                font-size:1em;
             }
         }
     }
     #projects {
-        background-color: #40c4ff;
+        background-color: rgb(75,75,75);
         .comp-screen-wrapper {
-            // width: 50%;
-            // height: 65%;
             z-index: 1;
-            mat-card {
-                box-shadow: none;
-            }
-            @media (max-width: 959px) {
-                width: 100%
-            }
             #screenshot-wrapper {
                 position: absolute;
                 z-index: -1;
-                top: 12.7%;
+                top: 8.7%;
                 bottom: 32%;
-                left: 11%;
-                right: 10.4%;
-                @media (max-width: 959px) {}
+                left: 7.6%;
+                right: 7.4%;
             }
         }
-        .content-text {
-            padding-top: 0;
+        .projects-list-wrapper{
+            padding-right:0;
+            .projects-list {
+                cursor: pointer;
+                color: white;
+                h4.mat-line {
+                    margin: 8px 0 0 0;
+                    color: #e64a19;
+                    white-space: normal;
+                }
+            }
         }
-        .projects-list {
-            cursor: pointer;
-        }
-        h4.mat-line {
-            margin: 8px 0 0 0;
-            color: #e64a19;
-            white-space: normal;
-        }
+
         .active {
-            color: rgba(0, 0, 0, .5);
+            color: rgba(255,255,255, .5);
+        }
+        mat-card.mat-card{
+            box-shadow: none;
+            background: transparent;
         }
         mat-list {
-            margin-top: 37px;
+            margin-top: calc(8.7% + 37px);
             width: 100%;
         }
         mat-card-title {
             text-align: center;
-            border-bottom: 1px solid rgba(0, 0, 0, .2);
+            border-bottom: 1px solid rgb(64, 196, 255);
             color: #e64a19;
         }
     }
     #work {
-        background-color: rgba(75, 75, 75, .5);
+        background-color: rgb(75, 75, 75);
         .mat-list .mat-list-item {
             height: 100%;
         }
         .description-list {
-            border-left: 1px solid rgba(75, 75, 75, .2);
+            border-left: 1px solid rgb(64, 196, 255);
         }
         .job-title-small {
             font-size: .7em;
         }
         .job-details-column {
-            color: rgba(75, 75, 75, .5);
+            color: rgb(64, 196, 255);
             h2 {
                 color: #e64a19;
                 margin: 8px 0 4px 0;
             }
             h3 {
-                color: #40c4ff;
+                color:rgb(64, 196, 255);
                 margin: 0 0 8px 16px;
             }
             h5 {
@@ -197,29 +191,10 @@ body {
     }
     #footer-card {
         color: white;
-        background-color: #40c4ff;
+        background-color: rgb(64, 196, 255);
         p {
             line-height: 12px;
             font-size: initial;
-        }
-    }
-    .footer {
-        height: 56px;
-        width: 200px;
-        position: fixed;
-        bottom: 0;
-        right: 8px;
-        ul {
-            list-style: none;
-            margin: 0;
-            li {
-                font-size: 45px;
-                margin-right: 18px;
-                a {
-                    color: white;
-                    text-shadow: 1px 2px 6px rgba(75, 75, 75, .5);
-                }
-            }
         }
     }
 }
