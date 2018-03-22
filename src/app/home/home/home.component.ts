@@ -9,31 +9,33 @@ import * as Typed from 'typed.js';
 })
 export class HomeComponent implements OnInit {
 
+  imgSrc: string = "../../../assets/img/";
+
   projects: Array<Project> = [
     {
       name: 'Toyota Real-Time Inventory UI Refactor', date: 'March 2018',
       description: "Total design overhaul of Toyota's Real-Time Inventory page UI. Optimized Critical Rendering Path for smoother site performance which resulted in a 93% performance improvement on page load. It is currently utilized by approximately 1500 dealerships in the USA.",
-      media: [], techsUsed: ['Node.js', 'Angular 4', 'HTML', 'SCSS']
+      media: [this.imgSrc + 'rti1.png', this.imgSrc + 'rti2.png', this.imgSrc + 'rti3.png', this.imgSrc + 'rti4.png'], techsUsed: ['Node.js', 'Angular', 'HTML', 'SCSS']
     },
     {
       name: 'Data Refresh', date: 'January 2018',
       description: "Automated data refresh AWS Lambda that parses results from SQL query to CSV, then uploads to designated FTP server and AWS S3 bucket. Deployed using Serverless to refresh data at user-specified intervals.",
-      media: [], githubHref: 'https://github.com/roberthelmick08/CSV-data-refresh', techsUsed: ['Node.js', 'AWS S3', 'AWS Lambda', 'Serverless']
+      media: [this.imgSrc + 'datarefresh1.png'], githubHref: 'https://github.com/roberthelmick08/CSV-data-refresh', techsUsed: ['Node.js', 'AWS S3', 'AWS Lambda', 'MSSQL', 'Serverless']
     },
     {
       name: 'Indiana Public Range Finder', date: 'August 2017',
       description: "This single-page web app displays all publicly-owned shooting ranges in Indiana, integrating the Google Maps and Foursquare APIs. The interactive map displays user check-in information from Foursquare.",
-      media: [], githubHref: 'https://github.com/roberthelmick08/Indiana-Public-Range-Finder---Maps-API', liveHref: 'https://roberthelmick08.github.io/maps-api-project/', techsUsed: ['Javascript', 'HTML', 'CSS', 'Knockout.js']
+      media: [this.imgSrc + 'rangefinder1.png', this.imgSrc + 'rangefinder2.png'], githubHref: 'https://github.com/roberthelmick08/Indiana-Public-Range-Finder---Maps-API', liveHref: 'https://roberthelmick08.github.io/maps-api-project/', techsUsed: ['Javascript', 'Knockout.js', 'HTML', 'CSS']
     },
     {
       name: 'DigIt', date: 'March 2017',
       description: "Final group project at Skill Distillery. This web application is designed for gardeners to keep track of each plant in their garden from the seed phase to the harvest phase. Users search DigIt's crowdsourced SQL database of plants to add plants to their personal Garden, which provides them with detailed information on optimal growth conditions for each plant, as well as the core of DigIt's functionality: the Reminders feature. The reminders algorithm utilizes the user's local climate data, and the specific plant's growth conditions and maturity stage to provide users with custom reminders for exactly when to plant each seed, water, and otherwise care for each plant.",
-      media: ['../../../assets/img/digit1.png', '../../../assets/img/digit2.png'], githubHref: 'https://github.com/roberthelmick08/DigIt', liveHref: 'http://roberthelmick.com:8080/DigIt/', techsUsed: ['Java', 'Javascript', 'HTML', 'CSS', 'AngularJS', 'MySQL']
+      media: [this.imgSrc + 'digit1.png', this.imgSrc + 'digit2.png'], githubHref: 'https://github.com/roberthelmick08/DigIt', liveHref: 'http://roberthelmick.com:8080/DigIt/', techsUsed: ['Java', 'Javascript', 'Angular', 'MySQL', 'HTML', 'CSS']
     },
     {
       name: 'BingeSync', date: 'February 2017',
       description: "Week 10 group project at Skill Distillery to develop a web app that allows for users to keep track of their favorite TV shows. By connecting with their friends, users are able to see which episodes of a TV show members in their group have watched. My project involvement included setup of SQL databases, object relational mapping, and implementing front-end functionality in the JSPs. ",
-      media: [], githubHref: 'https://github.com/roberthelmick08/Bingr', liveHref: 'http://roberthelmick.com:8080/BingeSync/', techsUsed: ['Java', 'Javascript', 'HTML', 'CSS', 'MySQL']
+      media: [this.imgSrc + 'bingesync1.png', this.imgSrc + 'bingesync2.png', this.imgSrc + 'bingesync3.png'], githubHref: 'https://github.com/roberthelmick08/Bingr', liveHref: 'http://roberthelmick.com:8080/BingeSync/', techsUsed: ['Java', 'Javascript', 'MySQL', 'HTML', 'CSS']
     }
   ];
 
@@ -54,7 +56,7 @@ export class HomeComponent implements OnInit {
     },
   ]
 
-
+  i: number = 0;
 
   date = new Date();
 
@@ -63,8 +65,8 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    var typed = new Typed("#typewriter", { 
-      strings: ["Associate Software Engineer", "Front End Dev"], 
+    var typed = new Typed("#typewriter", {
+      strings: ["Associate Software Engineer", "Front End Dev"],
       smartBackspace: true,
       loop: true,
       typeSpeed: 80,
@@ -72,13 +74,14 @@ export class HomeComponent implements OnInit {
       backSpeed: 60,
       cursorChar: '_'
     });
-  } 
+  }
 
   setActive(project) {
+    this.i = 0;
     this.activeProject = project;
   }
 
-  @HostListener('window:scroll', ['$event']) onScrollEvent($event) { 
+  @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
     console.log($event);
     console.log("scrolling");
     var bioHeader = document.getElementById("bio");
@@ -89,5 +92,12 @@ export class HomeComponent implements OnInit {
     console.log(projectsHeader);
     console.log(workHeader);
     console.log(educationHeader);
+  }
+
+  scrollScreenshot(direction: string) {
+    switch (direction) {
+      case ("left"): this.i--; break;
+      case ("right"): this.i++; break;
+    }
   }
 }

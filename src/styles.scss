@@ -23,22 +23,19 @@ body {
     h6,
     mat-card-title.mat-card-title {
         font-family: 'Montserrat', sans-serif;
+        text-align: center;
     }
     h1 {
         color: white;
-        text-align: center;
         margin-bottom: 24px;
-    }
-    mat-card {
-        .mat-list .mat-list-item {
-            height: 100%;
-        }
     }
     mat-divider.mat-divider {
         border-bottom: 1px solid rgba(64, 196, 255, 0.5);
     }
     .content-text {
         padding: 12px;
+        color: white;
+        text-align: justify;
     }
     .header {
         position: fixed;
@@ -66,7 +63,7 @@ body {
                 transform: skewX(20deg);
                 -ms-transform: skewX(20deg);
                 -webkit-transform: skewX(20deg);
-                i {
+                svg {
                     color: white;
                     font-size: 1.5em;
                 }
@@ -121,6 +118,48 @@ body {
     }
     #projects {
         background-color: rgb(75, 75, 75);
+        h1 {
+            margin-bottom: 0;
+        }
+        .projects-list-wrapper {
+            padding-right: 0;
+            text-align: left;
+            .projects-list {
+                cursor: pointer;
+                color: white;
+                opacity: 0.8;
+                &:hover {
+                    opacity: 1;
+                }
+                h4.mat-line {
+                    margin: 8px 0 0 0;
+                    color: #e64a19;
+                    white-space: normal;
+                    text-align: left;
+                }
+                h6.mat-line {
+                    margin: 0 0 8px 0;
+                    text-align: left;
+                }
+            }
+            .project-links-wrapper {
+                .project-links {
+                    font-size: 82px;
+                    text-shadow: 1px 1px 4px rgba(0, 0, 0, 1);
+                    color: rgba(64, 196, 255, 1);
+                    padding: 24px 0 12px 0;
+                    i:hover {
+                        text-shadow: 1px 1px 4px rgba(255, 255, 255, 1);
+                    }
+                }
+                a {
+                    text-decoration: none;
+                }
+                h4 {
+                    color: white;
+                }
+            }
+        }
         .comp-screen-wrapper {
             z-index: 1;
             #screenshot-wrapper {
@@ -132,20 +171,52 @@ body {
                 right: 7.4%;
             }
         }
-        .projects-list-wrapper {
-            padding-right: 0;
-            .projects-list {
-                cursor: pointer;
-                color: white;
-                h4.mat-line {
-                    margin: 8px 0 0 0;
-                    color: #e64a19;
-                    white-space: normal;
+        .carousel-handles-wrapper {
+            height: 100%;
+            width: 100%;
+            float: right;
+            position: relative;
+            margin-top: -66%;
+            .scroll-arrow-btn {
+                background: transparent;
+                border: none;
+                opacity: 0.7;
+                width: 100%;
+                &:hover:not([disabled]) {
+                    opacity: 1;
+                    cursor: pointer;
                 }
+                .scroll-arrow {
+                    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+                    font-size: 150px;
+                    width: 100%;
+                    height: 100%;
+                    color: white;
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+            .scroll-arrow-btn-left {
+                margin-left: -12%;
+                text-align: left;
+            }
+            .scroll-arrow-btn-right {
+                text-align: right;
+                float: right;
+                margin-right: -12%;
+            }
+        }
+        .tech-list {
+            margin-top: 37px;
+            color: white;
+            text-align: center;
+            .tech-list-item {
+                margin-top: 24px;
             }
         }
         .active {
-            color: rgba(255, 255, 255, .5);
+            opacity: 1 !important;
         }
         mat-card.mat-card {
             box-shadow: none;
@@ -156,7 +227,6 @@ body {
             width: 100%;
         }
         mat-card-title {
-            text-align: center;
             border-bottom: 1px solid rgb(64, 196, 255);
             color: #e64a19;
         }
@@ -173,17 +243,20 @@ body {
             font-size: .7em;
         }
         .job-details-column {
-            color: rgb(64, 196, 255);
             h2 {
                 color: #e64a19;
                 margin: 8px 0 4px 0;
+                text-align: left;
             }
             h3 {
                 color: rgb(64, 196, 255);
                 margin: 0 0 8px 16px;
+                text-align: left;
             }
             h5 {
                 margin: 0 0 8px 16px;
+                text-align: left;
+                color: rgba(75, 75, 75, 0.5);
             }
         }
     }

@@ -2,17 +2,17 @@
     <ul>
         <li class="nav-active">
             <a href="mailto:robert.helmick.08@gmail.com" title="Email">
-                <i class="fa fa-envelope-square" aria-hidden="true"></i>
+                <i class="far fa-envelope" aria-hidden="true"></i>
             </a>
         </li>
         <li class="nav-active">
-            <a href="https://github.com/roberthelmick08" title="Github">
-                <i class="fa fa-github-square" aria-hidden="true"></i>
+            <a href="https://github.com/roberthelmick08" title="GitHub">
+                <i class="fab fa-github" aria-hidden="true"></i>
             </a>
         </li>
         <li class="nav-active">
             <a href="https://www.linkedin.com/in/roberthelmick08" title="LinkedIn">
-                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
             </a>
         </li>
         <li [class.nav-active]="false" class="nav">
@@ -47,7 +47,7 @@
 <mat-card id="projects">
     <h1>Projects</h1>
     <mat-card-content>
-        <mat-card fxFlex="40" class="projects-list-wrapper">
+        <mat-card fxFlex="40" class="projects-list-wrapper" fxLayout="column">
             <mat-list>
                 <mat-list-item *ngFor="let project of projects" title="Click to view project details" class="projects-list" (click)="setActive(project)" [class.active]="project === activeProject">
                     <div fxFlex>
@@ -59,28 +59,57 @@
                     <mat-divider></mat-divider>
                 </mat-list-item>
             </mat-list>
+
+
+            <div fxFlex fxLayoutAlign="space-around start" class="project-links-wrapper">
+                <a *ngIf="activeProject.liveHref" href="{{activeProject.liveHref}}" title="Live path" fxLayout="column">
+                    <i class="fas fa-globe project-links" aria-hidden="true"></i>
+                    <h4>Live Path</h4>
+                </a>
+                <a *ngIf="activeProject.githubHref" href="{{activeProject.githubHref}}" title="GitHub path" fxLayout="column">
+                    <i class="fab fa-github project-links" aria-hidden="true"></i>
+                    <h4>GitHub</h4>
+                </a>
+            </div>
+
+
         </mat-card>
 
-        <mat-card fxFlex color="accent">
+        <mat-card fxFlex>
             <mat-card-title>{{activeProject.name}}</mat-card-title>
             <div fxLayout="column">
                 <mat-card class="comp-screen-wrapper">
                     <div class="comp-img-wrapper">
-                        <img src="../../../assets/img/comp-screen.png" class="computer-screen-img" />
+                        <img [src]="imgSrc + 'comp-screen.png'" class="computer-screen-img" />
+                        <div class="carousel-handles-wrapper" fxLayout="row">
+                            <button class="scroll-arrow-btn scroll-arrow-btn-left" [disabled]="!activeProject.media[i - 1]" (click)="scrollScreenshot('left')">
+                                <mat-icon class="scroll-arrow">
+                                    keyboard_arrow_left 
+                                </mat-icon>
+                            </button>
+                            <button class="scroll-arrow-btn scroll-arrow-btn-right" [disabled]="!activeProject.media[i + 1]" (click)="scrollScreenshot('right')">
+                                <mat-icon class="scroll-arrow">
+                                        keyboard_arrow_right
+                                </mat-icon>
+                            </button>
+                        </div>
                     </div>
 
                     <div id="screenshot-wrapper">
-                        <img src="../../../assets/img/digit1.png" class="computer-screen-img" />
+                        <img [src]="activeProject.media[i]" class="computer-screen-img" />
                     </div>
                 </mat-card>
 
-
-                <mat-card fxFlex="50" class="content-text">
-                    <span *ngFor="let tech of activeProject.techsUsed">{{tech}} </span>
-                    <mat-divider></mat-divider>
+                <mat-card class="content-text">
                     <p>{{activeProject.description}}</p>
                 </mat-card>
             </div>
+        </mat-card>
+        <mat-card fxFlex="10" fxLayout="column" class="tech-list">
+            <span *ngFor="let tech of activeProject.techsUsed" class="tech-list-item" fxLayoutAlgin="center center">
+                <img [src]="imgSrc + tech + '.svg'" title="{{tech}}" />
+                <h5>{{tech}}</h5>
+            </span>
         </mat-card>
 
     </mat-card-content>
