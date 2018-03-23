@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
     {
       name: 'Toyota Real-Time Inventory UI Refactor', date: 'March 2018',
       description: "Total design overhaul of Toyota's Real-Time Inventory page UI. Optimized Critical Rendering Path for smoother site performance which resulted in a 93% performance improvement on page load. It is currently utilized by approximately 1500 dealerships in the USA.",
-      media: [this.imgSrc + 'rti1.png', this.imgSrc + 'rti2.png', this.imgSrc + 'rti3.png', this.imgSrc + 'rti4.png'], techsUsed: ['Node.js', 'Angular', 'HTML', 'SCSS']
+      media: [this.imgSrc + 'rti1.png', this.imgSrc + 'rti2.png', this.imgSrc + 'rti3.png'], techsUsed: ['Node.js', 'Angular', 'HTML', 'SCSS']
     },
     {
       name: 'Data Refresh', date: 'January 2018',
