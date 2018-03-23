@@ -9,8 +9,16 @@ import * as Typed from 'typed.js';
 })
 export class HomeComponent implements OnInit {
 
-  imgSrc: string = "/assets/img/";
+  /*
+  * Use for prod build
+  */
+  imgSrc: string = "assets/img/";
 
+  /*
+  * Use for local deploy
+  */
+  // imgSrc: string = "../../../assets/img/";
+ 
   projects: Array<Project> = [
     {
       name: 'Toyota Real-Time Inventory UI Refactor', date: 'March 2018',
