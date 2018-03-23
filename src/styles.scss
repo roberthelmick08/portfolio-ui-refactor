@@ -21,6 +21,7 @@ body {
     h4,
     h5,
     h6,
+
     mat-card-title.mat-card-title {
         font-family: 'Montserrat', sans-serif;
         text-align: center;
@@ -37,6 +38,25 @@ body {
         color: white;
         text-align: justify;
     }
+    .job-details-column {
+            border-right: 1px solid rgb(64, 196, 255);
+            width:100%;
+            h2 {
+                color: #e64a19;
+                margin: 8px 0 4px 0;
+                text-align: left;
+            }
+            h3 {
+                color: rgb(64, 196, 255);
+                margin: 0 0 8px 16px;
+                text-align: left;
+            }
+            h5 {
+                margin: 0 0 8px 16px;
+                text-align: left;
+                color: rgba(75, 75, 75, 0.5);
+            }
+        }
     .header {
         position: fixed;
         z-index: 3;
@@ -88,6 +108,7 @@ body {
         background-size: cover;
         height: 100vh;
         padding: 0;
+        
         .opacity-filter {
             background-color: rgba(255, 255, 255, 0.2);
             height: 100%;
@@ -118,8 +139,13 @@ body {
     }
     #projects {
         background-color: rgb(75, 75, 75);
+        clip-path: polygon(0 0, 1600px 0, 1600px 175%, 0 65%);
         h1 {
             margin-bottom: 0;
+        }
+        mat-card.mat-card {
+            box-shadow: none;
+            background: transparent;
         }
         .projects-list-wrapper {
             padding-right: 0;
@@ -148,8 +174,9 @@ body {
                     text-shadow: 1px 1px 4px rgba(0, 0, 0, 1);
                     color: rgba(64, 196, 255, 1);
                     padding: 24px 0 12px 0;
-                    i:hover {
-                        text-shadow: 1px 1px 4px rgba(255, 255, 255, 1);
+                    opacity: 0.8;
+                    &:hover {
+                        opacity: 1;
                     }
                 }
                 a {
@@ -180,7 +207,7 @@ body {
             .scroll-arrow-btn {
                 background: transparent;
                 border: none;
-                opacity: 0.7;
+                opacity: 0.5;
                 width: 100%;
                 &:hover:not([disabled]) {
                     opacity: 1;
@@ -218,10 +245,6 @@ body {
         .active {
             opacity: 1 !important;
         }
-        mat-card.mat-card {
-            box-shadow: none;
-            background: transparent;
-        }
         mat-list {
             margin-top: calc(8.7% + 37px);
             width: 100%;
@@ -232,35 +255,64 @@ body {
         }
     }
     #work {
-        background-color: #e64a19;
+        box-shadow: none;
+        mat-card.mat-card {
+            box-shadow: none;
+            background: transparent;
+        }
+        h1{
+            color: rgb(64, 196, 255);
+        }
         .mat-list .mat-list-item {
             height: 100%;
+            .mat-list-item-content{
+                color: rgb(75, 75, 75);
+            }
         }
-        .description-list {
-            border-left: 1px solid rgb(64, 196, 255);
-        }
+
         .job-title-small {
             font-size: .7em;
         }
-        .job-details-column {
-            h2 {
-                color: #e64a19;
-                margin: 8px 0 4px 0;
-                text-align: left;
-            }
-            h3 {
-                color: rgb(64, 196, 255);
-                margin: 0 0 8px 16px;
-                text-align: left;
-            }
-            h5 {
-                margin: 0 0 8px 16px;
-                text-align: left;
-                color: rgba(75, 75, 75, 0.5);
-            }
-        }
+        
     }
     #education {
-        background-color: rgb(75, 75, 75);
+        background-color: #e64a19;
+        background: 
+        linear-gradient(135deg, #FFF 25%, transparent 25%) -50px 0,
+        linear-gradient(225deg, #FFF 25%, transparent 25%) -50px 0,
+        linear-gradient(315deg, #FFF 25%, transparent 25%),
+        linear-gradient(45deg, #FFF 25%, transparent 25%);	
+        background-size: 100px 100px;
+        background-color: rgba(230, 74, 25, 0.8);  
+        box-shadow: none;
+        color: rgb(75, 75, 75);
+        .float-line{
+            border-right: 2px solid #40c4ff;
+            width: 1px;
+            position: absolute;
+            height: 214px;
+            left: 50%;
+            top: -37px;
+        }
+        h1{
+            color: rgb(75,75,75);
+            margin-top: 12%;
+            margin-left: calc(50% - 150px);
+            padding-top: 45px;
+            margin-bottom: -120px;
+            background-color: rgb(64, 196, 255);
+            border-radius: 50%;
+            width: 300px;
+            height: 166px;
+            margin-right: 50%;
+            box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+        }
+        .mat-list {
+            width:100%;
+            .mat-list-item {
+                height: 100%;
+            }
+        }
+
     }
 }

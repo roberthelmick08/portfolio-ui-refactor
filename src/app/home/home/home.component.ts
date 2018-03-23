@@ -25,14 +25,14 @@ export class HomeComponent implements OnInit {
     {
       name: 'Indiana Public Range Finder', date: 'August 2017',
       description: "This single-page web app displays all publicly-owned shooting ranges in Indiana, integrating the Google Maps and Foursquare APIs. The interactive map displays user check-in information from Foursquare.",
-      media: [this.imgSrc + 'rangefinder1.png', this.imgSrc + 'rangefinder2.png'], githubHref: 'https://github.com/roberthelmick08/Indiana-Public-Range-Finder---Maps-API', liveHref: 'https://roberthelmick08.github.io/maps-api-project/', techsUsed: ['Javascript', 'Knockout.js', 'HTML', 'CSS']
+      media: [this.imgSrc + 'rangefinder1.png', this.imgSrc + 'rangefinder2.png'], githubHref: 'https://roberthelmick08.github.io/Indiana-Public-Range-Finder---Maps-API/', liveHref: 'https://roberthelmick08.github.io/maps-api-project/', techsUsed: ['Javascript', 'Knockout.js', 'HTML', 'CSS']
     },
     {
       name: 'DigIt', date: 'March 2017',
       description: "Final group project at Skill Distillery. This web application is designed for gardeners to keep track of each plant in their garden from the seed phase to the harvest phase. Users search DigIt's crowdsourced SQL database of plants to add plants to their personal Garden, which provides them with detailed information on optimal growth conditions for each plant, as well as the core of DigIt's functionality: the Reminders feature. The reminders algorithm utilizes the user's local climate data, and the specific plant's growth conditions and maturity stage to provide users with custom reminders for exactly when to plant each seed, water, and otherwise care for each plant.",
-      media: [this.imgSrc + 'digit1.png', this.imgSrc + 'digit2.png'], githubHref: 'https://github.com/roberthelmick08/DigIt', liveHref: 'http://roberthelmick.com:8080/DigIt/', techsUsed: ['Java', 'Javascript', 'Angular', 'MySQL', 'HTML', 'CSS']
+      media: [this.imgSrc + 'digit1.png', this.imgSrc + 'digit2.png', this.imgSrc + 'digit3.png'], githubHref: 'https://github.com/roberthelmick08/DigIt', liveHref: 'http://roberthelmick.com:8080/DigIt/', techsUsed: ['Java', 'Javascript', 'Angular', 'MySQL', 'HTML', 'CSS']
     },
-    {
+    { 
       name: 'BingeSync', date: 'February 2017',
       description: "Week 10 group project at Skill Distillery to develop a web app that allows for users to keep track of their favorite TV shows. By connecting with their friends, users are able to see which episodes of a TV show members in their group have watched. My project involvement included setup of SQL databases, object relational mapping, and implementing front-end functionality in the JSPs. ",
       media: [this.imgSrc + 'bingesync1.png', this.imgSrc + 'bingesync2.png', this.imgSrc + 'bingesync3.png'], githubHref: 'https://github.com/roberthelmick08/Bingr', liveHref: 'http://roberthelmick.com:8080/BingeSync/', techsUsed: ['Java', 'Javascript', 'MySQL', 'HTML', 'CSS']
@@ -54,6 +54,18 @@ export class HomeComponent implements OnInit {
       name: "SDL International", title: "Project Manager", startDate: "November 2012", endDate: "February 2016", location: "Superior, CO",
       description: ["Led localization project management team for a major global IT client, including a remote team out of Mumbai, India.", "Managed multi-million dollar financial accounts.", "Scrum leader for daily status meetings."]
     },
+  ]
+
+  schools: Array<any> = [
+    {
+      name: "Skill Distillery", degree: "Full Stack Bootcamp", startDate: "November 2016", endDate: "March 2017", location: "Denver, CO", details: "Technologies used include: Java, JS, MySQL, Angular, Git and more"
+    },
+    {
+      name: "Christopher Newport University", degree: "B.A. German Linguistics", startDate: "2008", endDate: "2012", location: "Newport News, VA"
+    },
+    {
+      name: "Udacity", degree: "Front End Nanodegree", details: "Received upon completion of Infosys training."
+    }
   ]
 
   i: number = 0;
