@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   /*
   * Use for prod build
   */
-  imgSrc: string = "assets/img/";
+  imgSrc: string = "assets/img/"; 
 
   /*
   * Use for local deploy
