@@ -4,7 +4,7 @@
 export interface Project {
     name: string;
     date: string; 
-    description: string; 
+    description: Array<string>; 
     media?: Array<string>;
     githubHref?: string;
     liveHref?: string;

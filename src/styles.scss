@@ -21,14 +21,32 @@ body {
     h4,
     h5,
     h6,
-
     mat-card-title.mat-card-title {
         font-family: 'Montserrat', sans-serif;
         text-align: center;
     }
+    .blink {
+        color:#e64a19;
+        margin-left: 0.2em; 
+        animation: blink-animation 1s steps(5, start) infinite;
+        -webkit-animation: blink-animation 1s steps(5, start) infinite;
+      }
+      @keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+      @-webkit-keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
     h1 {
         color: white;
         margin-bottom: 24px;
+    }
+    h2{            
+        text-align: right;
     }
     mat-divider.mat-divider {
         border-bottom: 1px solid rgba(64, 196, 255, 0.5);
@@ -38,7 +56,7 @@ body {
         color: white;
         text-align: justify;
     }
-    .job-details-column {
+    .details-column {
             border-right: 1px solid rgb(64, 196, 255);
             width:100%;
             h2 {
@@ -101,7 +119,7 @@ body {
             background: #e64a19;
             -webkit-transform: skewX(20deg);
             left: -7px;
-        }
+        } 
     }
     #bio {
         background: url('../src/assets/img/appalachia.jpg') no-repeat fixed;
@@ -134,12 +152,19 @@ body {
             }
             .typed-cursor {
                 color: #e64a19;
+                animation: blink-animation 1s steps(5, start) infinite;
+                -webkit-animation: blink-animation 1s steps(5, start) infinite;
             }
         }
     }
     #projects {
+        padding:0;
         background-color: rgb(75, 75, 75);
         clip-path: polygon(0 0, 1600px 0, 1600px 175%, 0 65%);
+        min-height: 100vh;
+        @media screen and (max-width: 959px) {
+            clip-path: polygon(0 0, 1600px 0, 1600px 190%, 0 80%);
+        }
         h1 {
             margin-bottom: 0;
         }
@@ -147,9 +172,19 @@ body {
             box-shadow: none;
             background: transparent;
         }
+        .text-resize{
+            p,
+            mat-icon.mat-icon{
+                font-size: 16px;
+            }
+        }
         .projects-list-wrapper {
             padding-right: 0;
             text-align: left;
+            @media screen and (max-width: 959px) {
+                height: 80vh;
+            }
+
             .projects-list {
                 cursor: pointer;
                 color: white;
@@ -240,6 +275,7 @@ body {
             text-align: center;
             .tech-list-item {
                 margin-top: 24px;
+                width: 78px;
             }
         }
         .active {
@@ -248,6 +284,7 @@ body {
         mat-list {
             margin-top: calc(8.7% + 37px);
             width: 100%;
+            padding: 0;
         }
         mat-card-title {
             border-bottom: 1px solid rgb(64, 196, 255);
@@ -290,7 +327,7 @@ body {
             border-right: 2px solid #40c4ff;
             width: 1px;
             position: absolute;
-            height: 214px;
+            height: 25vh;
             left: 50%;
             top: -37px;
         }
@@ -306,13 +343,28 @@ body {
             height: 166px;
             margin-right: 50%;
             box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+            .blink{
+                color:white;
+            }
+        }
+        mat-card.mat-card{
+            background-color:transparent;
+            box-shadow: none;
+            padding: 0;
+
         }
         .mat-list {
             width:100%;
             .mat-list-item {
                 height: 100%;
+                .mat-list-item-content{
+                    background-color:white;
+                    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+                } 
             }
         }
-
+        .details-column{
+            border-right: none;
+        }
     }
 }

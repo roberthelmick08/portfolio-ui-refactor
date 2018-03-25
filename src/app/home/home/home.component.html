@@ -32,10 +32,9 @@
 
         <mat-card-content>
 
-            <div fxFlex="50"></div>
+            <!-- <div fxFlex></div> -->
             <div class="title-wrapper" fxFlex>
-                <h1>Robert
-                    <span style="color:#e64a19">Helmick</span>
+                <h1>Robert<span style="color:#e64a19"><br>Helmick</span>
                 </h1>
                 <h2 id="typewriter"></h2>
                 <span id="typed"></span>
@@ -45,8 +44,8 @@
 
 </mat-card>
 <mat-card id="projects">
-    <h1>Projects</h1>
-    <mat-card-content fxLayout-lt-md="column">
+    <h1>Projects<span class="blink">_</span></h1>
+    <mat-card-content fxLayout.lt-md="column">
         <mat-card fxFlex="40" class="projects-list-wrapper" fxLayout="column">
             <mat-list>
                 <mat-list-item *ngFor="let project of projects" title="Click to view project details" class="projects-list" (click)="setActive(project)" [class.active]="project === activeProject">
@@ -78,7 +77,7 @@
         <mat-card fxFlex>
             <mat-card-title>{{activeProject.name}}</mat-card-title>
             <div fxLayout="column">
-                <mat-card class="comp-screen-wrapper">
+                <mat-card class="comp-screen-wrapper" fxHide.lt-md>
                     <div class="comp-img-wrapper">
                         <img [src]="imgSrc + 'comp-screen.png'" class="computer-screen-img" />
                         <div class="carousel-handles-wrapper" fxLayout="row">
@@ -90,7 +89,7 @@
                             <button class="scroll-arrow-btn scroll-arrow-btn-right" [disabled]="!activeProject.media[i + 1]" (click)="scrollScreenshot('right')">
                                 <mat-icon class="scroll-arrow">
                                         keyboard_arrow_right
-                                </mat-icon>
+                                </mat-icon> 
                             </button>
                         </div>
                     </div>
@@ -100,12 +99,14 @@
                     </div>
                 </mat-card>
 
-                <mat-card class="content-text">
-                    <p>{{activeProject.description}}</p>
+                <mat-card class="content-text text-resize">
+                    <p *ngFor="let desc of activeProject.description">
+                        <mat-icon matListIcon style="color:#e64a19">keyboard_arrow_right</mat-icon>
+                        {{desc}}</p>
                 </mat-card>
             </div>
         </mat-card>
-        <mat-card fxFlex="10" fxLayout="column" class="tech-list">
+        <mat-card fxFlex="10" fxLayout="column" fxLayout.lt-md="row"  fxLayoutAlign.lt-md="center center" class="tech-list">
             <span *ngFor="let tech of activeProject.techsUsed" class="tech-list-item" fxLayoutAlgin="center center">
                 <img [src]="imgSrc + tech + '.svg'" title="{{tech}}" />
                 <h5>{{tech}}</h5>
@@ -116,13 +117,13 @@
 </mat-card>
 
 <mat-card id="work" fxLayout="column">
-    <h1>Work Experience</h1>
+    <h1>Work Experience<span class="blink">_</span></h1>
     <mat-card-content>
         <mat-card class="content-text">
             <mat-card-content>
                 <mat-list>
                     <mat-list-item *ngFor="let job of jobs">
-                        <div fxLayout="column" fxFlex="29" class="job-details-column">
+                        <div fxLayout="column" fxFlex="29" class="details-column">
                             <h2>{{job.name}}</h2>
                             <h3>{{job.title}}</h3>
                             <h5>{{job.startDate}} – {{job.endDate}}</h5>
@@ -145,12 +146,12 @@
 <mat-card id="education">
     <div class="float-line"></div>
 
-    <h1>Education</h1>
+    <h1>Education<span class="blink">_</span></h1> 
     <mat-card-content>
-        <mat-card fxFlex class="content-text" fxLayoutAlign="start center">
+        <mat-card fxFlex fxLayoutAlign="start center">
                 <mat-list>
                         <mat-list-item *ngFor="let school of schools">
-                            <div fxLayout="column" class="job-details-column">
+                            <div fxLayout="column" class="details-column">
                                 <h2>{{school.name}}</h2>
                                 <h3>{{school.degree}}</h3>
                                 <h5 *ngIf="school.startDate && school.endDate">{{school.startDate}} – {{school.endDate}}</h5>
@@ -158,7 +159,7 @@
                                 <h5 *ngIf="school.details">{{school.details}}</h5>
                             </div>
                             <mat-divider></mat-divider>
-                        </mat-list-item>
+                        </mat-list-item> 
                     </mat-list>
         </mat-card>
 
