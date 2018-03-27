@@ -1,167 +1,181 @@
-<div class="header">
-    <ul>
-        <li class="nav-active">
-            <a href="mailto:robert.helmick.08@gmail.com" title="Email">
-                <i class="far fa-envelope" aria-hidden="true"></i>
-            </a>
-        </li>
-        <li class="nav-active">
-            <a href="https://github.com/roberthelmick08" title="GitHub">
-                <i class="fab fa-github" aria-hidden="true"></i>
-            </a>
-        </li>
-        <li class="nav-active">
-            <a href="https://www.linkedin.com/in/roberthelmick08" title="LinkedIn">
-                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-            </a>
-        </li>
-        <li [class.nav-active]="false" class="nav">
-            <a [ngx-scroll-to]="'#projects'" [ngx-scroll-to-easing]="'easeInOutQuad'" title="Projects">Projects</a>
-        </li>
-        <li [class.nav-active]="false" class="nav">
-            <a [ngx-scroll-to]="'#work'" [ngx-scroll-to-easing]="'easeInOutQuad'" title="Work Experience">Work Experience</a>
-        </li>
-        <li [class.nav-active]="false" class="nav">
-            <a [ngx-scroll-to]="'#education'" [ngx-scroll-to-easing]="'easeInOutQuad'" title="Education">Education</a>
-        </li>
-    </ul>
-</div>
+<mat-card fxLayout="column" fxFlex="100" id="window-wrapper">
 
-<mat-card id="bio">
-    <div class="opacity-filter">
-
-        <mat-card-content>
-
-            <!-- <div fxFlex></div> -->
-            <div class="title-wrapper" fxFlex>
-                <h1>Robert<span style="color:#e64a19"><br>Helmick</span>
-                </h1>
-                <h2 id="typewriter"></h2>
-                <span id="typed"></span>
-            </div>
-        </mat-card-content>
+    <div class="header" fxFlex="100">
+        <ul>
+            <li class="nav-active">
+                <a href="mailto:robert.helmick.08@gmail.com" title="Email">
+                    <i class="far fa-envelope" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-active">
+                <a href="https://github.com/roberthelmick08" title="GitHub">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-active">
+                <a href="https://www.linkedin.com/in/roberthelmick08" title="LinkedIn">
+                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li [class.nav-active]="false" class="nav" fxHide.lt-md>
+                <a [ngx-scroll-to]="'#projects'" [ngx-scroll-to-easing]="'easeInOutQuad'" title="Projects">Projects</a>
+            </li>
+            <li [class.nav-active]="false" class="nav" fxHide.lt-md>
+                <a [ngx-scroll-to]="'#work'" [ngx-scroll-to-easing]="'easeInOutQuad'" title="Work Experience">Work Experience</a>
+            </li>
+            <li [class.nav-active]="false" class="nav" fxHide.lt-md>
+                <a [ngx-scroll-to]="'#education'" [ngx-scroll-to-easing]="'easeInOutQuad'" title="Education">Education</a>
+            </li>
+        </ul>
     </div>
 
-</mat-card>
-<mat-card id="projects">
-    <h1>Projects<span class="blink">_</span></h1>
-    <mat-card-content fxLayout.lt-md="column">
-        <mat-card fxFlex="40" class="projects-list-wrapper" fxLayout="column">
-            <mat-list>
-                <mat-list-item *ngFor="let project of projects" title="Click to view project details" class="projects-list" (click)="setActive(project)" [class.active]="project === activeProject">
-                    <div fxFlex>
-                        <h4 mat-line>{{project.name}}</h4>
-                        <h6 mat-line> {{project.date}} </h6>
-                    </div>
-                    <i class="material-icons" *ngIf="project === activeProject">keyboard_arrow_right</i>
 
-                    <mat-divider></mat-divider>
-                </mat-list-item>
-            </mat-list>
+    <mat-card id="bio" fxFlex="100">
+        <div class="opacity-filter">
 
-
-            <div fxFlex fxLayoutAlign="space-around start" class="project-links-wrapper">
-                <a *ngIf="activeProject.liveHref" href="{{activeProject.liveHref}}" title="Live path" fxLayout="column">
-                    <i class="fas fa-globe project-links" aria-hidden="true"></i>
-                    <h4>Live Path</h4>
-                </a>
-                <a *ngIf="activeProject.githubHref" href="{{activeProject.githubHref}}" title="GitHub path" fxLayout="column">
-                    <i class="fab fa-github project-links" aria-hidden="true"></i>
-                    <h4>GitHub</h4>
-                </a>
-            </div>
-
-
-        </mat-card>
-
-        <mat-card fxFlex>
-            <mat-card-title>{{activeProject.name}}</mat-card-title>
-            <div fxLayout="column">
-                <mat-card class="comp-screen-wrapper" fxHide.lt-md>
-                    <div class="comp-img-wrapper">
-                        <img [src]="imgSrc + 'comp-screen.png'" class="computer-screen-img" />
-                        <div class="carousel-handles-wrapper" fxLayout="row">
-                            <button class="scroll-arrow-btn scroll-arrow-btn-left" [disabled]="!activeProject.media[i - 1]" (click)="scrollScreenshot('left')">
-                                <mat-icon class="scroll-arrow">
-                                    keyboard_arrow_left 
-                                </mat-icon>
-                            </button>
-                            <button class="scroll-arrow-btn scroll-arrow-btn-right" [disabled]="!activeProject.media[i + 1]" (click)="scrollScreenshot('right')">
-                                <mat-icon class="scroll-arrow">
-                                        keyboard_arrow_right
-                                </mat-icon> 
-                            </button>
-                        </div>
-                    </div>
-
-                    <div id="screenshot-wrapper">
-                        <img [src]="activeProject.media[i]" class="computer-screen-img" />
-                    </div>
-                </mat-card>
-
-                <mat-card class="content-text text-resize">
-                    <p *ngFor="let desc of activeProject.description">
-                        <mat-icon matListIcon style="color:#e64a19">keyboard_arrow_right</mat-icon>
-                        {{desc}}</p>
-                </mat-card>
-            </div>
-        </mat-card>
-        <mat-card fxFlex="10" fxLayout="column" fxLayout.lt-md="row"  fxLayoutAlign.lt-md="center center" class="tech-list">
-            <span *ngFor="let tech of activeProject.techsUsed" class="tech-list-item" fxLayoutAlgin="center center">
-                <img [src]="imgSrc + tech + '.svg'" title="{{tech}}" />
-                <h5>{{tech}}</h5>
-            </span> 
-        </mat-card>
-
-    </mat-card-content>
-</mat-card>
-
-<mat-card id="work" fxLayout="column">
-    <h1>Work Experience<span class="blink">_</span></h1>
-    <mat-card-content>
-        <mat-card class="content-text">
             <mat-card-content>
+
+                <!-- <div fxFlex></div> -->
+                <div class="title-wrapper" fxFlex>
+                    <h1>Robert
+                        <span style="color:#e64a19">
+                            <br>Helmick</span>
+                    </h1>
+                    <h2 id="typewriter"></h2>
+                    <span id="typed"></span>
+                </div>
+            </mat-card-content>
+        </div>
+
+    </mat-card>
+    <mat-card id="projects" fxFlex="100">
+        <h1>Projects
+            <span class="blink">_</span>
+        </h1>
+        <mat-card-content fxLayout.lt-md="column">
+            <mat-card fxFlex="40" class="projects-list-wrapper" fxLayout="column">
                 <mat-list>
-                    <mat-list-item *ngFor="let job of jobs">
-                        <div fxLayout="column" fxFlex="29" class="details-column">
-                            <h2>{{job.name}}</h2>
-                            <h3>{{job.title}}</h3>
-                            <h5>{{job.startDate}} – {{job.endDate}}</h5>
-                            <h5>{{job.location}}</h5>
+                    <mat-list-item *ngFor="let project of projects" title="Click to view project details" class="projects-list" (click)="setActive(project)"
+                        [class.active]="project === activeProject">
+                        <div fxFlex>
+                            <h4 mat-line>{{project.name}}</h4>
+                            <h6 mat-line> {{project.date}} </h6>
                         </div>
-                        <mat-list class="description-list">
-                            <mat-list-item *ngFor="let desc of job.description">
-                                <mat-icon matListIcon>keyboard_arrow_right</mat-icon>
-                                {{desc}}
-                            </mat-list-item>
-                        </mat-list>
+                        <i class="material-icons" *ngIf="project === activeProject">keyboard_arrow_right</i>
+
                         <mat-divider></mat-divider>
                     </mat-list-item>
                 </mat-list>
-            </mat-card-content>
-        </mat-card>
-    </mat-card-content>
-</mat-card>
 
-<mat-card id="education">
-    <div class="float-line"></div>
 
-    <h1>Education<span class="blink">_</span></h1> 
-    <mat-card-content>
-        <mat-card fxFlex fxLayoutAlign="start center">
-                <mat-list>
-                        <mat-list-item *ngFor="let school of schools">
-                            <div fxLayout="column" class="details-column">
-                                <h2>{{school.name}}</h2>
-                                <h3>{{school.degree}}</h3>
-                                <h5 *ngIf="school.startDate && school.endDate">{{school.startDate}} – {{school.endDate}}</h5>
-                                <h5 *ngIf="school.location">{{school.location}}</h5>
-                                <h5 *ngIf="school.details">{{school.details}}</h5>
+                <mat-card *ngIf="activeProject.githubHref || activeProject.liveHref" fxFlex fxLayoutAlign="space-around start" class="project-links-wrapper">
+                    <a *ngIf="activeProject.liveHref" href="{{activeProject.liveHref}}" title="Live path" fxLayout="column">
+                        <i class="fas fa-globe project-links" aria-hidden="true"></i>
+                        <h4>Live Path</h4>
+                    </a>
+                    <a *ngIf="activeProject.githubHref" href="{{activeProject.githubHref}}" title="GitHub path" fxLayout="column">
+                        <i class="fab fa-github project-links" aria-hidden="true"></i>
+                        <h4>GitHub</h4>
+                    </a>
+                </mat-card>
+            </mat-card>
+
+            <mat-card fxFlex>
+                <mat-card-title>{{activeProject.name}}</mat-card-title>
+                <div fxLayout="column">
+                    <mat-card class="comp-screen-wrapper" fxHide.lt-md>
+                        <div class="comp-img-wrapper">
+                            <img [src]="imgSrc + 'comp-screen.png'" class="computer-screen-img" />
+                            <div class="carousel-handles-wrapper" fxLayout="row">
+                                <button class="scroll-arrow-btn scroll-arrow-btn-left" [disabled]="!activeProject.media[i - 1]" (click)="scrollScreenshot('left')">
+                                    <mat-icon class="scroll-arrow">
+                                        keyboard_arrow_left
+                                    </mat-icon>
+                                </button>
+                                <button class="scroll-arrow-btn scroll-arrow-btn-right" [disabled]="!activeProject.media[i + 1]" (click)="scrollScreenshot('right')">
+                                    <mat-icon class="scroll-arrow">
+                                        keyboard_arrow_right
+                                    </mat-icon>
+                                </button>
                             </div>
-                            <mat-divider></mat-divider>
-                        </mat-list-item> 
-                    </mat-list>
-        </mat-card>
+                        </div>
 
-    </mat-card-content>
+                        <div id="screenshot-wrapper">
+                            <img [src]="activeProject.media[i]" class="computer-screen-img" />
+                        </div>
+                    </mat-card>
+
+                    <mat-card class="content-text text-resize">
+                            <p *ngFor="let desc of activeProject.description">
+                                    <mat-icon matListIcon style="color:#e64a19">keyboard_arrow_right</mat-icon>
+                                    {{desc}}</p>
+                    </mat-card>
+                </div>
+            </mat-card>
+            <mat-card fxFlex="10" fxLayout="column" fxLayout.lt-md="row" fxLayoutAlign.lt-md="center center" class="tech-list">
+                <span *ngFor="let tech of activeProject.techsUsed" class="tech-list-item" fxLayoutAlgin="center center">
+                    <img [src]="imgSrc + tech + '.svg'" title="{{tech}}" />
+                    <h5>{{tech}}</h5>
+                </span>
+            </mat-card>
+
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card id="work" fxLayout="column" fxFlex="100">
+        <h1>Work Experience
+            <span class="blink">_</span>
+        </h1>
+        <mat-card-content>
+            <mat-card class="content-text opaque-bg">
+                <mat-card-content>
+                    <mat-list>
+                        <mat-list-item *ngFor="let job of jobs">
+                            <mat-card fxLayout.lt-md="column" class="item-content-wrapper"> 
+                                <mat-card fxLayout="column" fxFlex="35" fxFlex.lt-md="100" class="details-column">
+                                    <h2>{{job.name}}</h2>
+                                    <h3>{{job.title}}</h3>
+                                    <h5>{{job.startDate}} – {{job.endDate}}</h5> 
+                                    <h5>{{job.location}}</h5>
+                                </mat-card>
+                                <mat-list class="description-list" fxLayout="column" fxLayoutAlign="center">
+                                    <mat-list-item *ngFor="let desc of job.description">
+                                        <mat-icon matListIcon>keyboard_arrow_right</mat-icon>
+                                        <h5>{{desc}}</h5>
+                                    </mat-list-item>
+                                </mat-list>
+                            </mat-card>
+                            <mat-divider></mat-divider>
+                        </mat-list-item>
+                    </mat-list>
+                </mat-card-content>
+            </mat-card>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card id="education" fxFlex="100">
+        <div class="float-line"></div>
+
+        <h1>Education
+            <span class="blink">_</span>
+        </h1>
+        <mat-card-content>
+            <mat-card fxFlex fxLayoutAlign="start center">
+                <mat-list>
+                    <mat-list-item *ngFor="let school of schools; let i = index" [ngStyle.gt-sm]="{'margin-left.%': getEduLeftMargin(school, i)}"
+                        fxLayout="row">
+                        <div class="details-column" fxLayout="column" fxFlex>
+                            <h2>{{school.name}}</h2>
+                            <h3>{{school.degree}}</h3>
+                            <h5 *ngIf="school.startDate && school.endDate">{{school.startDate}} – {{school.endDate}}</h5>
+                            <h5 *ngIf="school.location">{{school.location}}</h5>
+                            <h5 *ngIf="school.details">{{school.details}}</h5>
+                        </div>
+                        <mat-divider></mat-divider>
+                    </mat-list-item>
+                </mat-list>
+            </mat-card>
+
+        </mat-card-content>
+    </mat-card>
 </mat-card>

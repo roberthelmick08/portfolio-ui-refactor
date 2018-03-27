@@ -15,8 +15,7 @@ export class HomeComponent implements OnInit {
     {
       name: 'Toyota Real-Time Inventory UI Refactor', date: 'March 2018',
       description: ["Total design overhaul of Toyota's Real-Time Inventory page UI.", "Critical Rendering Path optimization resulting in a 93% performance improvement on page load.",
-      "Currently utilized by ~1500 dealerships in the USA."
-    ],
+      "Currently utilized by ~1500 dealerships in the USA."],
       media: [this.imgSrc + 'rti1.png', this.imgSrc + 'rti2.png', this.imgSrc + 'rti3.png', this.imgSrc + 'rti4.png'], techsUsed: ['Node.js', 'Angular', 'HTML', 'SCSS']
     },
     {
@@ -113,16 +112,16 @@ export class HomeComponent implements OnInit {
   }
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
-    console.log($event);
-    console.log("scrolling");
-    var bioHeader = document.getElementById("bio");
-    var projectsHeader = document.getElementById("projects");
-    var workHeader = document.getElementById("work");
-    var educationHeader = document.getElementById("education");
-    console.log(bioHeader);
-    console.log(projectsHeader);
-    console.log(workHeader);
-    console.log(educationHeader);
+    // console.log($event);
+    // console.log("scrolling");
+    // var bioHeader = document.getElementById("bio");
+    // var projectsHeader = document.getElementById("projects");
+    // var workHeader = document.getElementById("work");
+    // var educationHeader = document.getElementById("education");
+    // console.log(bioHeader);
+    // console.log(projectsHeader);
+    // console.log(workHeader);
+    // console.log(educationHeader);
   }
 
   scrollScreenshot(direction: string) {
@@ -130,5 +129,10 @@ export class HomeComponent implements OnInit {
       case ("left"): this.i--; break;
       case ("right"): this.i++; break;
     }
+  }
+
+  getEduLeftMargin(school, i){
+    
+    return i * (100 / this.schools.length);
   }
 }
