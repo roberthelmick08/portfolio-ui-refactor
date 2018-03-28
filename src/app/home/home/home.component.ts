@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
     {
       name: 'Data Refresh', date: 'January 2018',
       description: ["Lambda function that parses results from MSSQL => CSV file => FTP server => AWS S3 bucket.", "Deployed using Serverless to refresh data at user-specified intervals."],
-      media: [this.imgSrc + 'datarefresh1.png'], githubHref: 'https://github.com/roberthelmick08/CSV-data-refresh', techsUsed: ['Node.js', 'AWS S3', 'AWS Lambda', 'MSSQL', 'Serverless']
+      media: [this.imgSrc + 'datarefresh1.png'], githubHref: 'https://github.com/roberthelmick08/Data-Refresh', techsUsed: ['Node.js', 'AWS S3', 'AWS Lambda', 'MSSQL', 'Serverless']
     },
     {
       name: 'Indiana Public Range Finder', date: 'August 2017',
