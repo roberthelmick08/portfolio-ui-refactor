@@ -17,13 +17,13 @@
                     <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                 </a>
             </li>
-            <li [class.nav-active]="false" class="nav" fxHide.lt-md>
+            <li [class.nav-active]="false" class="nav" fxHide.lt-sm>
                 <a [ngx-scroll-to]="'#projects'" [ngx-scroll-to-easing]="'easeInOutQuad'" title="Projects">Projects</a>
             </li>
-            <li [class.nav-active]="false" class="nav" fxHide.lt-md>
+            <li [class.nav-active]="false" class="nav" fxHide.lt-sm>
                 <a [ngx-scroll-to]="'#work'" [ngx-scroll-to-easing]="'easeInOutQuad'" title="Work Experience">Work Experience</a>
             </li>
-            <li [class.nav-active]="false" class="nav" fxHide.lt-md>
+            <li [class.nav-active]="false" class="nav" fxHide.lt-sm>
                 <a [ngx-scroll-to]="'#education'" [ngx-scroll-to-easing]="'easeInOutQuad'" title="Education">Education</a>
             </li>
         </ul>
@@ -52,7 +52,7 @@
         <h1>Projects
             <span class="blink">_</span>
         </h1>
-        <mat-card-content fxLayout.lt-md="column">
+        <mat-card-content fxLayout.lt-sm="column">
             <mat-card fxFlex="40" class="projects-list-wrapper" fxLayout="column">
                 <mat-list>
                     <mat-list-item *ngFor="let project of projects" title="Click to view project details" class="projects-list" (click)="setActive(project)"
@@ -83,16 +83,16 @@
             <mat-card fxFlex>
                 <mat-card-title>{{activeProject.name}}</mat-card-title>
                 <div fxLayout="column">
-                    <mat-card class="comp-screen-wrapper" fxHide.lt-md>
+                    <mat-card class="comp-screen-wrapper" fxHide.lt-sm>
                         <div class="comp-img-wrapper">
                             <img [src]="imgSrc + 'comp-screen.png'" class="computer-screen-img" />
                             <div class="carousel-handles-wrapper" fxLayout="row">
-                                <button class="scroll-arrow-btn scroll-arrow-btn-left" [disabled]="!activeProject.media[i - 1]" (click)="scrollScreenshot('left')">
+                                <button class="scroll-arrow-btn scroll-arrow-btn-left" fxHide="!activeProject.media[i - 1]" (click)="scrollScreenshot('left')">
                                     <mat-icon class="scroll-arrow">
                                         keyboard_arrow_left
                                     </mat-icon>
                                 </button>
-                                <button class="scroll-arrow-btn scroll-arrow-btn-right" [disabled]="!activeProject.media[i + 1]" (click)="scrollScreenshot('right')">
+                                <button class="scroll-arrow-btn scroll-arrow-btn-right" fxHide="!activeProject.media[i + 1]" (click)="scrollScreenshot('right')">
                                     <mat-icon class="scroll-arrow">
                                         keyboard_arrow_right
                                     </mat-icon>
@@ -112,11 +112,11 @@
                     </mat-card>
                 </div>
             </mat-card>
-            <mat-card fxFlex="10" fxLayout="column" fxLayout.lt-md="row" fxLayoutAlign.lt-md="center center" class="tech-list">
-                <span *ngFor="let tech of activeProject.techsUsed" class="tech-list-item" fxLayoutAlgin="center center">
+            <mat-card fxFlex="10" fxLayout="column" fxLayout.lt-sm="row" class="tech-list" fxLayoutWrap="wrap" fxLayoutAlign.lt-sm="center center">
+                <div *ngFor="let tech of activeProject.techsUsed" class="tech-list-item" fxLayoutAlgin="center center">
                     <img [src]="imgSrc + tech + '.svg'" title="{{tech}}" />
-                    <h5>{{tech}}</h5>
-                </span>
+                    <h5 fxHide.lt-sm>{{tech}}</h5>
+                </div>
             </mat-card>
 
         </mat-card-content>
@@ -131,8 +131,8 @@
                 <mat-card-content>
                     <mat-list>
                         <mat-list-item *ngFor="let job of jobs">
-                            <mat-card fxLayout.lt-md="column" class="item-content-wrapper"> 
-                                <mat-card fxLayout="column" fxFlex="35" fxFlex.lt-md="100" class="details-column">
+                            <mat-card fxLayout.lt-sm="column" class="item-content-wrapper"> 
+                                <mat-card fxLayout="column" fxFlex="35" fxFlex.lt-sm="100" class="details-column">
                                     <h2>{{job.name}}</h2>
                                     <h3>{{job.title}}</h3>
                                     <h5>{{job.startDate}} – {{job.endDate}}</h5> 
