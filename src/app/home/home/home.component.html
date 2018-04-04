@@ -35,7 +35,6 @@
 
             <mat-card-content>
 
-                <!-- <div fxFlex></div> -->
                 <div class="title-wrapper" fxFlex>
                     <h1>Robert
                         <span style="color:#e64a19">
@@ -87,12 +86,12 @@
                         <div class="comp-img-wrapper">
                             <img [src]="imgSrc + 'comp-screen.png'" class="computer-screen-img" />
                             <div class="carousel-handles-wrapper" fxLayout="row">
-                                <button class="scroll-arrow-btn scroll-arrow-btn-left" fxHide="!activeProject.media[i - 1]" (click)="scrollScreenshot('left')">
+                                <button class="scroll-arrow-btn scroll-arrow-btn-left" [disabled]="!activeProject.media[i - 1]" (click)="scrollScreenshot('left')">
                                     <mat-icon class="scroll-arrow">
                                         keyboard_arrow_left
                                     </mat-icon>
                                 </button>
-                                <button class="scroll-arrow-btn scroll-arrow-btn-right" fxHide="!activeProject.media[i + 1]" (click)="scrollScreenshot('right')">
+                                <button class="scroll-arrow-btn scroll-arrow-btn-right" [disabled]="!activeProject.media[i + 1]" (click)="scrollScreenshot('right')">
                                     <mat-icon class="scroll-arrow">
                                         keyboard_arrow_right
                                     </mat-icon>

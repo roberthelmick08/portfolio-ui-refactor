@@ -19,11 +19,6 @@ export class HomeComponent implements OnInit {
       media: [this.imgSrc + 'rti1.png', this.imgSrc + 'rti2.png', this.imgSrc + 'rti3.png'], techsUsed: ['Node.js', 'Angular', 'HTML', 'SCSS']
     },
     {
-      name: 'Portfolio Site', date: 'March 2018',
-      description: ["Personal portfolio site for www.roberthelmick.com", "Admin user given CRUD functionality for Projects, Work Experience and Education.", "Data persists to MySQL database."],
-      media: [this.imgSrc + 'portfolio1.png'], githubHref: 'https://github.com/roberthelmick08/portfolio-ui-refactor', techsUsed: ['Node.js', 'Angular', 'MySQL', 'HTML', 'SCSS']
-    },
-    {
       name: 'Data Refresh', date: 'January 2018',
       description: ["Lambda function that parses results from MSSQL => CSV file => FTP server => AWS S3 bucket.", "Deployed using Serverless to refresh data at user-specified intervals."],
       media: [this.imgSrc + 'datarefresh1.png'], githubHref: 'https://github.com/roberthelmick08/Data-Refresh', techsUsed: ['Node.js', 'AWS S3', 'AWS Lambda', 'MSSQL', 'Serverless']
@@ -31,7 +26,7 @@ export class HomeComponent implements OnInit {
     {
       name: 'Indiana Public Range Finder', date: 'August 2017',
       description: ["Displays all publicly-owned shooting ranges in Indiana using Google Maps API", "The interactive map displays user check-in information from Foursquare."],
-      media: [this.imgSrc + 'rangefinder1.png', this.imgSrc + 'rangefinder2.png'], githubHref: 'https://roberthelmick08.github.io/Indiana-Public-Range-Finder---Maps-API/', liveHref: 'https://roberthelmick08.github.io/maps-api-project/', techsUsed: ['Javascript', 'Knockout.js', 'HTML', 'CSS']
+      media: [this.imgSrc + 'rangefinder1.png', this.imgSrc + 'rangefinder2.png'], githubHref: 'https://github.com/roberthelmick08/Indiana-Public-Range-Finder---Maps-API', liveHref: 'https://roberthelmick08.github.io/Indiana-Public-Range-Finder---Maps-API/', techsUsed: ['Javascript', 'Knockout.js', 'HTML', 'CSS']
     },
     {
       name: 'DigIt', date: 'March 2017',
