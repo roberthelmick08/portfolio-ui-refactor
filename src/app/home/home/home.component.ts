@@ -82,15 +82,7 @@ export class HomeComponent implements OnInit {
 
   i: number = 0;
 
-  schoolIdx: number = 0;
-
-  date = new Date();
-
   activeProject: Project = this.projects[0];
-
-  divisible: number = Math.ceil((100 / this.schools.length)/5)*5;;
-
-  adjDivisible: number = 0;
 
   constructor() { }
 
@@ -111,19 +103,6 @@ export class HomeComponent implements OnInit {
     this.activeProject = project;
   }
 
-  @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
-    // console.log($event);
-    // console.log("scrolling");
-    // var bioHeader = document.getElementById("bio");
-    // var projectsHeader = document.getElementById("projects");
-    // var workHeader = document.getElementById("work");
-    // var educationHeader = document.getElementById("education");
-    // console.log(bioHeader);
-    // console.log(projectsHeader);
-    // console.log(workHeader);
-    // console.log(educationHeader);
-  }
-
   scrollScreenshot(direction: string) {
     switch (direction) {
       case ("left"): this.i--; break;
@@ -132,7 +111,6 @@ export class HomeComponent implements OnInit {
   }
 
   getEduLeftMargin(school, i){
-    
     return i * (100 / this.schools.length);
   }
 }
