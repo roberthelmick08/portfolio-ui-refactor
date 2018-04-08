@@ -147,7 +147,7 @@
                 }
             }
             #bio {
-                background: url('../src/assets/img/appalachia.jpg') no-repeat fixed;
+                background: url('../src/assets/appalachia.jpg') no-repeat fixed;
                 background-size: cover;
                 height: 100vh;
                 padding: 0;
@@ -246,7 +246,7 @@
                     }
                 }
                 .projects-list-wrapper {
-                    padding-right: 0;
+                    margin-top: 60px;
                     text-align: left;
                     @media screen and (max-width: 599px) {
                         padding-bottom: 0;
@@ -465,14 +465,14 @@
                 background-color: rgba(230, 74, 25, 0.8);
                 box-shadow: none;
                 color: rgb(75, 75, 75);
-                height: 100vh;
+                height: 650px;
                 .float-line {
                     border-right: 2px solid #40c4ff;
                     width: 1px;
                     position: absolute;
                     left: 50%;
-                    height: 100vh;
-                    top: -40%;
+                    height: 500px;
+                    top: -35%;
                     @media screen and (max-width: 599px) {
                         height: 600px;
                         top: -25%;

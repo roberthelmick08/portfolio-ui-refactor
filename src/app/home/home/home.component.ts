@@ -9,7 +9,7 @@ import * as Typed from 'typed.js';
 })
 export class HomeComponent implements OnInit {
 
-  imgSrc: string = "../../../assets/img/";
+  imgSrc: string = "../../../assets/";
 
   projects: Array<Project> = [
     {
