@@ -31,22 +31,22 @@ export class HomeComponent implements OnInit {
     {
       name: 'DigIt', date: 'March 2017',
       description: ["Track each plant in your garden from the seed phase to the harvest phase.", "Search DigIt's crowdsourced database to find detailed growing information.", "Receive custom reminders based on your local climate, the plant's growth conditions, and maturity stage for when to sow, water, or otherwise care for your plants."],
-      media: [this.imgSrc + 'digit1.png', this.imgSrc + 'digit2.png', this.imgSrc + 'digit3.png'], githubHref: 'https://github.com/roberthelmick08/DigIt', liveHref: 'http://roberthelmick.com:8080/DigIt/', techsUsed: ['Java', 'Javascript', 'Angular', 'MySQL', 'HTML', 'CSS']
+      media: [this.imgSrc + 'digit1.png', this.imgSrc + 'digit2.png', this.imgSrc + 'digit3.png'], githubHref: 'https://github.com/roberthelmick08/DigIt', liveHref: 'http://apps.rh-codes.com:8080/DigIt/', techsUsed: ['Java', 'Javascript', 'Angular', 'MySQL', 'HTML', 'CSS']
     },
     { 
       name: 'Applied', date: 'March 2017',
       description: ["Week 13 individual weekend project at Skill Distillery.", "Goal: To create a persistent back-end database connected to a dynamic front end.", "Applied is an organizational tool to keep track of the users' active job applications and job postings that the user is interested in."],
-      media: [this.imgSrc + 'applied1.png', this.imgSrc + 'applied2.png'], githubHref: 'https://github.com/roberthelmick08/Applied', liveHref: 'http://roberthelmick.com:8080/Applied/', techsUsed: ['Java', 'Javascript', 'MySQL', 'HTML', 'CSS']
+      media: [this.imgSrc + 'applied1.png', this.imgSrc + 'applied2.png'], githubHref: 'https://github.com/roberthelmick08/Applied', liveHref: 'http://apps.rh-codes.com:8080/Applied/', techsUsed: ['Java', 'Javascript', 'MySQL', 'HTML', 'CSS']
     },
     { 
       name: 'BingeSync', date: 'February 2017',
       description: ["BingeSync allows for users to keep track of their favorite TV shows.", "Connect with your friends to see which episodes of a TV show your friends have watched."],
-      media: [this.imgSrc + 'bingesync1.png', this.imgSrc + 'bingesync2.png', this.imgSrc + 'bingesync3.png'], githubHref: 'https://github.com/roberthelmick08/Bingr', liveHref: 'http://roberthelmick.com:8080/BingeSync/', techsUsed: ['Java', 'Javascript', 'MySQL', 'HTML', 'CSS']
+      media: [this.imgSrc + 'bingesync1.png', this.imgSrc + 'bingesync2.png', this.imgSrc + 'bingesync3.png'], githubHref: 'https://github.com/roberthelmick08/Bingr', liveHref: 'http://apps.rh-codes.com:8080/BingeSync/', techsUsed: ['Java', 'Javascript', 'MySQL', 'HTML', 'CSS']
     },
     { 
       name: 'Visitr', date: 'February 2017',
       description: ["Week 8 individual project at Skill Distillery.", "Users track and rate their favorite cities that they've visited."],
-      media: [this.imgSrc + 'visitr1.png'], githubHref: 'https://github.com/roberthelmick08/Visitr', liveHref: 'http://roberthelmick.com:8080/Visitr/', techsUsed: ['Java', 'HTML', 'CSS']
+      media: [this.imgSrc + 'visitr1.png'], githubHref: 'https://github.com/roberthelmick08/Visitr', liveHref: 'http://apps.rh-codes.com:8080/Visitr/', techsUsed: ['Java', 'HTML', 'CSS']
     },
     
   ];
@@ -54,7 +54,11 @@ export class HomeComponent implements OnInit {
   jobs: Array<any> = [
     {
       name: "Infosys Ltd", title: "Associate Software Engineer", startDate: "July 2017", endDate: "Present", location: "Plano, TX",
-      description: ["Part of development team for Toyota's Real-Time Inventory application.", "Enhancing the quality of inventory application used by dealerships based on user-escalated defects.", "Refactored UI/UX in its entirety and enhanced loading performance by 93%.", "Technology stack: Node.js, Angular 4, MS SQL, AWS S3 & Lambda."]
+      description: ["Part of development team for Toyota's Real-Time Inventory application.", 
+      "Enhancing the quality of inventory application used by dealerships based on user-escalated defects.", 
+      "Translate wireframes into interactive, dynamic code.",
+      "UI/UX overhaul and performance enhancement resulting in by 93% load time improvement.", 
+      "Technology stack: Node.js, Angular, MS SQL, AWS"]
     },
 
     {
