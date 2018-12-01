@@ -3,8 +3,8 @@
 // Model for holding Project attributes
 export interface Project {
     name: string;
-    date: string; 
-    description: Array<string>; 
+    date: string;
+    description: Array<string>;
     media?: Array<string>;
     githubHref?: string;
     liveHref?: string;
