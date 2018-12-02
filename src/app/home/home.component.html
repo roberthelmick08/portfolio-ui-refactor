@@ -32,9 +32,7 @@
 
     <mat-card id="bio" fxFlex="100">
         <div class="opacity-filter">
-
             <mat-card-content class="title-container">
-
                 <div class="title-wrapper" fxFlex>
                     <h1>Robert
                         <span style="color:#e64a19">
@@ -54,8 +52,7 @@
         <mat-card-content fxLayout.lt-sm="column">
             <mat-card fxFlex="40" class="projects-list-wrapper" fxLayout="column">
                 <mat-list>
-                    <mat-list-item *ngFor="let project of projects" title="Click to view project details" class="projects-list" (click)="setActive(project)"
-                        [class.active]="project === activeProject">
+                    <mat-list-item *ngFor="let project of projects" title="Click to view project details" class="projects-list" (click)="setActive(project)" [class.active]="project === activeProject">
                         <div fxFlex>
                             <h4 mat-line>{{project.name}}</h4>
                             <h6 mat-line> {{project.date}} </h6>
@@ -84,7 +81,7 @@
                 <div fxLayout="column">
                     <mat-card class="comp-screen-wrapper" fxHide.lt-sm>
                         <div class="comp-img-wrapper">
-                            <img [src]="imgSrc + 'comp-screen.png'" class="computer-screen-img" />
+                            <img [src]="imgSrc + 'comp-screen.png'" class="computer-screen-img" *ngIf="activeProject.media.length > 0" />
                             <div class="carousel-handles-wrapper" fxLayout="row">
                                 <button class="scroll-arrow-btn scroll-arrow-btn-left" [disabled]="!activeProject.media[i - 1]" (click)="scrollScreenshot('left')">
                                     <mat-icon class="scroll-arrow">
@@ -100,14 +97,14 @@
                         </div>
 
                         <div id="screenshot-wrapper">
-                            <img [src]="activeProject.media[i]" class="computer-screen-img" />
+                            <img [src]="activeProject.media[i]" class="computer-screen-img" *ngIf="activeProject.media.length > 0" />
                         </div>
                     </mat-card>
 
                     <mat-card class="content-text text-resize">
-                            <p *ngFor="let desc of activeProject.description">
-                                    <mat-icon matListIcon style="color:#e64a19">keyboard_arrow_right</mat-icon>
-                                    {{desc}}</p>
+                        <p *ngFor="let desc of activeProject.description">
+                            <mat-icon matListIcon style="color:#e64a19">keyboard_arrow_right</mat-icon>
+                            {{desc}}</p>
                     </mat-card>
                 </div>
             </mat-card>
@@ -130,11 +127,11 @@
                 <mat-card-content>
                     <mat-list>
                         <mat-list-item *ngFor="let job of jobs">
-                            <mat-card fxLayout.lt-sm="column" class="item-content-wrapper"> 
+                            <mat-card fxLayout.lt-sm="column" class="item-content-wrapper">
                                 <mat-card fxLayout="column" fxFlex="35" fxFlex.lt-sm="100" class="details-column">
                                     <h2>{{job.name}}</h2>
                                     <h3>{{job.title}}</h3>
-                                    <h5>{{job.startDate}} – {{job.endDate}}</h5> 
+                                    <h5>{{job.startDate}} – {{job.endDate}}</h5>
                                     <h5>{{job.location}}</h5>
                                 </mat-card>
                                 <mat-list class="description-list" fxLayout="column" fxLayoutAlign="center">
@@ -161,8 +158,7 @@
         <mat-card-content>
             <mat-card fxFlex fxLayoutAlign="start center">
                 <mat-list>
-                    <mat-list-item *ngFor="let school of schools; let i = index" [ngStyle.gt-sm]="{'margin-left.%': getEduLeftMargin(school, i)}"
-                        fxLayout="row">
+                    <mat-list-item *ngFor="let school of schools; let i = index" [ngStyle.gt-sm]="{'margin-left.%': getEduLeftMargin(school, i)}" fxLayout="row">
                         <div class="details-column" fxLayout="column" fxFlex>
                             <h2>{{school.name}}</h2>
                             <h3>{{school.degree}}</h3>
@@ -170,11 +166,9 @@
                             <h5 *ngIf="school.location">{{school.location}}</h5>
                             <h5 *ngIf="school.details">{{school.details}}</h5>
                         </div>
-                        <mat-divider></mat-divider>
                     </mat-list-item>
                 </mat-list>
             </mat-card>
-
         </mat-card-content>
     </mat-card>
-</mat-card> 
+</mat-card>

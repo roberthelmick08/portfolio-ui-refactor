@@ -6,7 +6,7 @@ import * as Typed from 'typed.js';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styles: ['/src/styles.scss']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
@@ -14,25 +14,25 @@ export class HomeComponent implements OnInit {
 
   projects: Array<Project> = [
     {
-      name: 'Toyota Inventory Pricing Engine', date: 'December 2018',
-      description: [''],
-      media: [this.imgSrc + 'not-available.png'], techsUsed: ['Angular', 'Node.js', 'HTML', 'SCSS']
+      name: 'Dig-It', date: 'Ongoing',
+      description: ['Track each plant in your garden from the seed phase to the harvest phase.', 'Search Dig-It\'s crowdsourced database to find detailed growing information.', 'Receive custom reminders based on your local climate, the plant\'s growth conditions, and maturity stage for when to sow, water, or otherwise care for your plants.'],
+      media: [this.imgSrc + 'Dig-It1.png', this.imgSrc + 'Dig-It2.png', this.imgSrc + 'Dig-It3.png', this.imgSrc + 'Dig-It4.png', this.imgSrc + 'Dig-It5.png', this.imgSrc + 'Dig-It6.png', this.imgSrc + 'Dig-It7.png'], githubHref: 'https://github.com/roberthelmick08/Dig-It', liveHref: 'http://apps.rh-codes.com:8080/Dig-It/', techsUsed: ['Java', 'Javascript', 'Angular', 'MySQL', 'HTML', 'CSS']
     },
     {
-      name: 'DigIt', date: 'November 2018',
-      description: ['Track each plant in your garden from the seed phase to the harvest phase.', 'Search DigIt\'s crowdsourced database to find detailed growing information.', 'Receive custom reminders based on your local climate, the plant\'s growth conditions, and maturity stage for when to sow, water, or otherwise care for your plants.'],
-      media: [this.imgSrc + 'digit1.png', this.imgSrc + 'digit2.png', this.imgSrc + 'digit3.png'], githubHref: 'https://github.com/roberthelmick08/DigIt', liveHref: 'http://apps.rh-codes.com:8080/DigIt/', techsUsed: ['Java', 'Javascript', 'Angular', 'MySQL', 'HTML', 'CSS']
+      name: 'Toyota Inventory Pricing Engine', date: 'December 2018',
+      description: ['Toyota internal web app that allows dealerships to create pricing rules on vehicle inventory.', 'Reworking data structures to suit pricing engine requirements.', 'Prototyping iterations with design team to improve UX.'],
+      media: [], techsUsed: ['Angular', 'Node.js', 'HTML', 'SCSS']
     },
     {
       name: 'Toyota Real-Time Inventory UI Refactor', date: 'July 2018',
-      description: ['Total design overhaul of Toyota\'s Real-Time Inventory page UI.', 'Critical Rendering Path optimization resulting in a 93% performance improvement on page load.',
+      description: ['Total UI overhaul of Toyota\'s Real-Time Inventory web app.', 'Major contributions include UI for inventory list, in-line status editing, vehicle details, vehicle history, and page filtering screens.', 'Critical Rendering Path optimization resulting in a 93% performance improvement on page load.',
       'Currently utilized by ~1500 dealerships in the USA.'],
       media: [this.imgSrc + 'rti1.png', this.imgSrc + 'rti2.png', this.imgSrc + 'rti3.png'], techsUsed: ['Angular', 'Node.js', 'HTML', 'SCSS']
     },
     {
       name: 'Data Refresh', date: 'January 2018',
       description: ['Lambda function that parses results from MSSQL => CSV file => FTP server => AWS S3 bucket.', 'Deployed using Serverless to refresh data at user-specified intervals.'],
-      media: [this.imgSrc + 'datarefresh1.png'], githubHref: 'https://github.com/roberthelmick08/Data-Refresh', techsUsed: ['Node.js', 'AWS S3', 'AWS Lambda', 'MSSQL', 'Serverless']
+      media: [], githubHref: 'https://github.com/roberthelmick08/Data-Refresh', techsUsed: ['Node.js', 'AWS S3', 'AWS Lambda', 'MSSQL', 'Serverless']
     },
   ];
 
@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit {
       name: 'Christopher Newport University', degree: 'B.A. German Linguistics', startDate: '2008', endDate: '2012', location: 'Newport News, VA'
     },
     {
-      name: 'Udacity', degree: 'Front End Nanodegree', details: 'Received upon completion of Infosys training.'
+      name: 'Udacity', degree: 'Front End Nanodegree', endDate: 'August 2017', details: 'Received upon completion of Infosys training.'
     }
   ];
 
