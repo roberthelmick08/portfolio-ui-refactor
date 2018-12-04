@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Project } from '../../model/Project';
 import { Job } from '../../model/Job';
 import * as Typed from 'typed.js';
+import { MatDialog } from '@angular/material';
+import { ScreenshotDialogComponent } from './screenshot-dialog/screenshot-dialog.component';
 
 @Component({
   selector: 'app-home',
@@ -15,24 +17,36 @@ export class HomeComponent implements OnInit {
   projects: Array<Project> = [
     {
       name: 'Dig-It', date: 'Ongoing',
-      description: ['Track each plant in your garden from the seed phase to the harvest phase.', 'Search Dig-It\'s crowdsourced database to find detailed growing information.', 'Receive custom reminders based on your local climate, the plant\'s growth conditions, and maturity stage for when to sow, water, or otherwise care for your plants.'],
-      media: [this.imgSrc + 'Dig-It1.png', this.imgSrc + 'Dig-It2.png', this.imgSrc + 'Dig-It3.png', this.imgSrc + 'Dig-It4.png', this.imgSrc + 'Dig-It5.png', this.imgSrc + 'Dig-It6.png', this.imgSrc + 'Dig-It7.png'], githubHref: 'https://github.com/roberthelmick08/Dig-It', liveHref: 'http://apps.rh-codes.com:8080/Dig-It/', techsUsed: ['Java', 'Javascript', 'Angular', 'MySQL', 'HTML', 'CSS']
+      description: ['Single-page gardening reminder app. Users receive custom reminders based on local climate, plant type and age.', 'Track each plant in your garden from the seed phase to the harvest phase.', 'Search Dig-It\'s crowdsourced database to find detailed growing information.', 'Receive custom reminders based on your local climate, the plant\'s growth conditions, and maturity stage for when to sow, water, or otherwise care for your plants.'],
+      media: [
+        {path: this.imgSrc + 'Dig-It1.png', caption: 'Dig-It homepage'},
+        {path: this.imgSrc + 'Dig-It2.png', caption: 'Login / Register'},
+        {path: this.imgSrc + 'Dig-It3.png', caption: 'Search Dig-It\'s crowdsourced plant database'},
+        {path: this.imgSrc + 'Dig-It4.png', caption: 'Filter plants by type, life cycle, and optimal sun requirements.'},
+        {path: this.imgSrc + 'Dig-It5.png', caption: 'Add a new plant to Dig-It\'s database.'},
+        {path: this.imgSrc + 'Dig-It6.png', caption: 'View all plants in your garden and active gardening reminders.'},
+        {path: this.imgSrc + 'Dig-It7.png', caption: 'View basic plant info, upcoming reminders, and sowing and harvesting instructions.'},
+      ], githubHref: 'https://github.com/roberthelmick08/Dig-It', liveHref: 'http://apps.rh-codes.com:8080/Dig-It/', techsUsed: ['Angular', 'MongoDB', 'Node.js', 'HTML', 'CSS']
     },
     {
       name: 'Toyota Inventory Pricing Engine', date: 'December 2018',
-      description: ['Toyota internal web app that allows dealerships to create pricing rules on vehicle inventory.', 'Reworking data structures to suit pricing engine requirements.', 'Prototyping iterations with design team to improve UX.'],
-      media: [], techsUsed: ['Angular', 'Node.js', 'HTML', 'SCSS']
+      description: ['Internal dealership pricing matrix tool.', 'Prototyping iterations with design team to improve UX.', 'Implementation of Vehicle Selection and Create Pricing Rule features.'],
+      techsUsed: ['Angular', 'Node.js', 'HTML', 'SCSS']
     },
     {
       name: 'Toyota Real-Time Inventory UI Refactor', date: 'July 2018',
       description: ['Total UI overhaul of Toyota\'s Real-Time Inventory web app.', 'Major contributions include UI for inventory list, in-line status editing, vehicle details, vehicle history, and page filtering screens.', 'Critical Rendering Path optimization resulting in a 93% performance improvement on page load.',
       'Currently utilized by ~1500 dealerships in the USA.'],
-      media: [this.imgSrc + 'rti1.png', this.imgSrc + 'rti2.png', this.imgSrc + 'rti3.png'], techsUsed: ['Angular', 'Node.js', 'HTML', 'SCSS']
+      media: [
+        {path: this.imgSrc + 'rti1.png', caption: ''},
+        {path: this.imgSrc + 'rti2.png', caption: ''},
+        {path: this.imgSrc + 'rti3.png', caption: ''},
+      ], techsUsed: ['Angular', 'Node.js', 'HTML', 'SCSS']
     },
     {
       name: 'Data Refresh', date: 'January 2018',
       description: ['Lambda function that parses results from MSSQL => CSV file => FTP server => AWS S3 bucket.', 'Deployed using Serverless to refresh data at user-specified intervals.'],
-      media: [], githubHref: 'https://github.com/roberthelmick08/Data-Refresh', techsUsed: ['Node.js', 'AWS S3', 'AWS Lambda', 'MSSQL', 'Serverless']
+      githubHref: 'https://github.com/roberthelmick08/Data-Refresh', techsUsed: ['Node.js', 'AWS S3', 'AWS Lambda', 'MSSQL', 'Serverless']
     },
   ];
 
@@ -71,7 +85,7 @@ export class HomeComponent implements OnInit {
 
   activeProject: Project = this.projects[0];
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
     const typed = new Typed('#typewriter', {
@@ -99,5 +113,15 @@ export class HomeComponent implements OnInit {
 
   getEduLeftMargin(school, i) {
     return i * (100 / this.schools.length);
+  }
+
+  openScreenshotDialog(imgIndex: number) {
+    this.dialog.open(ScreenshotDialogComponent, {
+      data: {
+        imageIndex: imgIndex,
+        activeProject: this.activeProject
+      },
+      panelClass: ['screenshot-dialog']
+    });
   }
 }

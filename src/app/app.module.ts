@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+import { ScreenshotDialogComponent } from './home/screenshot-dialog/screenshot-dialog.component';
 import { HomeComponent } from './home/home.component';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -11,6 +12,7 @@ import {
   MatIconModule,
   MatListModule,
   MatButtonModule,
+  MatDialogModule,
   MatMenuModule,
   MatCardModule
 } from '@angular/material';
@@ -18,7 +20,8 @@ import {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ScreenshotDialogComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -31,8 +34,12 @@ import {
     MatListModule,
     MatButtonModule,
     MatMenuModule,
+    MatDialogModule,
     MatCardModule,
     ScrollToModule.forRoot()
+  ],
+  entryComponents: [
+    ScreenshotDialogComponent
   ],
   bootstrap: [AppComponent]
 })

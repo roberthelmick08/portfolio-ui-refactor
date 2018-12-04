@@ -316,6 +316,10 @@ $break-xl: 3600px;
         }
         .comp-screen-wrapper {
             z-index: 1;
+            .computer-screen-img,
+            .carousel-handles-wrapper {
+                cursor: pointer;
+            }
             #screenshot-wrapper {
                 position: absolute;
                 z-index: -1;
@@ -359,7 +363,6 @@ $break-xl: 3600px;
                 background: transparent;
                 border: none;
                 opacity: 0.5;
-                width: 100%;
                 &:hover:not([disabled]) {
                     opacity: 1;
                     cursor: pointer;

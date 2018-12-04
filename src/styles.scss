@@ -9,3 +9,16 @@
     body {
         width: 100%;
     }
+    
+    .screenshot-dialog {
+        border-top: 4px solid #e64a19;
+        .mat-dialog-container {
+            padding: 0 0 0.5rem 0;
+            background-color: rgb(75, 75, 75);
+            color: white;
+        }
+    }
+    
+    /deep/ .cdk-overlay-dark-backdrop {
+        background: rgba(75, 75, 75, 0.7) !important;
+    }

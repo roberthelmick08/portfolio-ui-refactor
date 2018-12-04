@@ -81,14 +81,14 @@
                 <div fxLayout="column">
                     <mat-card class="comp-screen-wrapper" fxHide.lt-sm>
                         <div class="comp-img-wrapper">
-                            <img [src]="imgSrc + 'comp-screen.png'" class="computer-screen-img" *ngIf="activeProject.media.length > 0" />
-                            <div class="carousel-handles-wrapper" fxLayout="row">
-                                <button class="scroll-arrow-btn scroll-arrow-btn-left" [disabled]="!activeProject.media[i - 1]" (click)="scrollScreenshot('left')">
+                            <img [src]="imgSrc + 'comp-screen.png'" class="computer-screen-img" *ngIf="activeProject.media" (click)="openScreenshotDialog(i)" />
+                            <div class="carousel-handles-wrapper" fxLayout="row" fxLayoutAlign="space-between center" (click)="openScreenshotDialog(i)">
+                                <button class="scroll-arrow-btn scroll-arrow-btn-left" [disabled]="!activeProject.media[i - 1]" (click)="$event.stopPropagation(); scrollScreenshot('left')">
                                     <mat-icon class="scroll-arrow">
                                         keyboard_arrow_left
                                     </mat-icon>
                                 </button>
-                                <button class="scroll-arrow-btn scroll-arrow-btn-right" [disabled]="!activeProject.media[i + 1]" (click)="scrollScreenshot('right')">
+                                <button class="scroll-arrow-btn scroll-arrow-btn-right" [disabled]="!activeProject.media[i + 1]" (click)="$event.stopPropagation(); scrollScreenshot('right')">
                                     <mat-icon class="scroll-arrow">
                                         keyboard_arrow_right
                                     </mat-icon>
@@ -97,7 +97,7 @@
                         </div>
 
                         <div id="screenshot-wrapper">
-                            <img [src]="activeProject.media[i]" class="computer-screen-img" *ngIf="activeProject.media.length > 0" />
+                            <img [src]="activeProject.media[i].path" class="computer-screen-img" *ngIf="activeProject.media" />
                         </div>
                     </mat-card>
 

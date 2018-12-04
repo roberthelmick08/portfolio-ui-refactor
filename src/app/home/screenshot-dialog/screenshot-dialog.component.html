@@ -1,0 +1,20 @@
+<img src="{{project.media[imageIndex].path}}" />
+
+<div class="carousel-handles-wrapper" fxLayout="row" fxLayoutAlign="space-between center">
+    <button class="scroll-arrow-btn scroll-arrow-btn-left" [disabled]="!project.media[imageIndex - 1]" (click)="onPreviousSlide()">
+      <mat-icon class="scroll-arrow">
+          keyboard_arrow_left
+      </mat-icon>
+  </button>
+    <button class="scroll-arrow-btn scroll-arrow-btn-right" [disabled]="!project.media[imageIndex + 1]" (click)="onNextSlide()">
+      <mat-icon class="scroll-arrow">
+          keyboard_arrow_right
+      </mat-icon>
+  </button>
+</div>
+
+<div class="screenshot-caption-wrapper">
+    <p fxLayoutAlign="center center">
+        {{project.media[imageIndex].caption}}
+    </p>
+</div>
