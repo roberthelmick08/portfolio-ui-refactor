@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
         {path: this.imgSrc + 'Dig-It5.png', caption: 'Add a new plant to Dig-It\'s database.'},
         {path: this.imgSrc + 'Dig-It6.png', caption: 'View all plants in your garden and active gardening reminders.'},
         {path: this.imgSrc + 'Dig-It7.png', caption: 'View basic plant info, upcoming reminders, and sowing and harvesting instructions.'},
-      ], githubHref: 'https://github.com/roberthelmick08/Dig-It', liveHref: 'http://apps.rh-codes.com:8080/Dig-It/', techsUsed: ['Angular', 'MongoDB', 'Node.js', 'HTML', 'CSS']
+      ], githubHref: 'https://github.com/roberthelmick08/Dig-It', liveHref: 'http://dig-it.rh-codes.com', techsUsed: ['Angular', 'MongoDB', 'Node.js', 'HTML', 'CSS']
     },
     {
       name: 'Toyota Inventory Pricing Engine', date: 'December 2018',
