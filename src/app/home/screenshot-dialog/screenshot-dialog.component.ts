@@ -19,12 +19,10 @@ export class ScreenshotDialogComponent {
 
   onNextSlide() {
     this.imageIndex++;
-    console.log(this.imageIndex);
   }
 
   onPreviousSlide() {
     this.imageIndex--;
-    console.log(this.imageIndex);
   }
 
 }

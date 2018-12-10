@@ -513,12 +513,12 @@ $break-xl: 3600px;
             color: $gray;
             margin-top: 12%;
             margin-left: calc(50% - 150px);
-            padding-top: 45px;
+            padding-top: 28px;
             margin-bottom: -150px;
-            background-color: $blue;
+            background-color: #40c4ff;
             border-radius: 50%;
             width: 300px;
-            height: 166px;
+            height: 164px;
             box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
             @media screen and (max-width: $break-sm) {
                 margin-top: 32%;
@@ -537,6 +537,7 @@ $break-xl: 3600px;
         mat-card.mat-card {
             background-color: transparent;
             box-shadow: none;
+            padding-bottom: 0;
         }
         .details-column {
             border-right: none;

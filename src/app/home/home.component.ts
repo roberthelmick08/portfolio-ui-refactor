@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
         {path: this.imgSrc + 'Dig-It5.png', caption: 'Add a new plant to Dig-It\'s database.'},
         {path: this.imgSrc + 'Dig-It6.png', caption: 'View all plants in your garden and active gardening reminders.'},
         {path: this.imgSrc + 'Dig-It7.png', caption: 'View basic plant info, upcoming reminders, and sowing and harvesting instructions.'},
-      ], githubHref: 'https://github.com/roberthelmick08/Dig-It', liveHref: 'http://dig-it.rh-codes.com', techsUsed: ['Angular', 'MongoDB', 'Node.js', 'HTML', 'CSS']
+      ], githubHref: 'https://github.com/roberthelmick08/Dig-It', liveHref: 'http://dig-it.rh-codes.com', techsUsed: ['Angular', 'MongoDB', 'Node.js', 'HTML', 'SCSS']
     },
     {
       name: 'Toyota Inventory Pricing Engine', date: 'December 2018',
@@ -35,12 +35,13 @@ export class HomeComponent implements OnInit {
     },
     {
       name: 'Toyota Real-Time Inventory UI Refactor', date: 'July 2018',
-      description: ['Total UI overhaul of Toyota\'s Real-Time Inventory web app.', 'Major contributions include UI for inventory list, in-line status editing, vehicle details, vehicle history, and page filtering screens.', 'Critical Rendering Path optimization resulting in a 93% performance improvement on page load.',
-      'Currently utilized by ~1500 dealerships in the USA.'],
+      description: ['Total UI overhaul of Toyota\'s Real-Time Inventory web app.', 'Major contributions include UI for inventory list, in-line vehicle details view, vehicle details screen, vehicle history, and page filtering screens.', 'Critical Rendering Path optimization resulting in a 93% performance improvement on page load.',
+      'Currently utilized by approximately 1500 dealerships throughout North America.'],
       media: [
-        {path: this.imgSrc + 'rti1.png', caption: ''},
-        {path: this.imgSrc + 'rti2.png', caption: ''},
-        {path: this.imgSrc + 'rti3.png', caption: ''},
+        {path: this.imgSrc + 'rti1.png', caption: 'Inventory List screen.'},
+        {path: this.imgSrc + 'rti2.png', caption: 'In-line vehicle details view.'},
+        {path: this.imgSrc + 'rti3.png', caption: 'Inventory List filter.'},
+        {path: this.imgSrc + 'rti4.png', caption: 'Vehicle Details screen.'},
       ], techsUsed: ['Angular', 'Node.js', 'HTML', 'SCSS']
     },
     {
