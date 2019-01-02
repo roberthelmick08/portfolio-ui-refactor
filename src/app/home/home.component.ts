@@ -21,11 +21,12 @@ export class HomeComponent implements OnInit {
       media: [
         {path: this.imgSrc + 'Dig-It1.png', caption: 'Dig-It homepage'},
         {path: this.imgSrc + 'Dig-It2.png', caption: 'Login / Register'},
-        {path: this.imgSrc + 'Dig-It3.png', caption: 'Search Dig-It\'s crowdsourced plant database'},
-        {path: this.imgSrc + 'Dig-It4.png', caption: 'Filter plants by type, life cycle, and optimal sun requirements.'},
-        {path: this.imgSrc + 'Dig-It5.png', caption: 'Add a new plant to Dig-It\'s database.'},
-        {path: this.imgSrc + 'Dig-It6.png', caption: 'View all plants in your garden and active gardening reminders.'},
-        {path: this.imgSrc + 'Dig-It7.png', caption: 'View basic plant info, upcoming reminders, and sowing and harvesting instructions.'},
+        {path: this.imgSrc + 'Dig-It3.png', caption: 'View your garden and active gardening reminders.'},
+        {path: this.imgSrc + 'Dig-It4.png', caption: 'View basic plant info, upcoming reminders, and sowing and harvesting instructions.'},
+        {path: this.imgSrc + 'Dig-It5.png', caption: 'Upload and crop your own images to customize your garden.'},
+        {path: this.imgSrc + 'Dig-It6.png', caption: 'Search Dig-It\'s crowdsourced plant database.'},
+        {path: this.imgSrc + 'Dig-It7.png', caption: 'Filter plants by type, life cycle, and optimal sun requirements.'},
+        {path: this.imgSrc + 'Dig-It8.png', caption: 'Add a new plant to Dig-It\'s database.'},
       ], githubHref: 'https://github.com/roberthelmick08/Dig-It', liveHref: 'http://dig-it.rh-codes.com', techsUsed: ['Angular', 'MongoDB', 'Node.js', 'HTML', 'SCSS']
     },
     {
