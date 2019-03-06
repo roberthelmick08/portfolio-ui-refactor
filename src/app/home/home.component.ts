@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
 
   jobs: Array<Job> = [
     {
-      name: 'Infosys Ltd', title: 'Associate Software Engineer', startDate: 'July 2017', endDate: 'Present', location: 'Plano, TX',
+      name: 'Infosys Ltd', title: 'Senior Associate UI Developer', startDate: 'July 2017', endDate: 'Present', location: 'Plano, TX',
       description: ['Part of development team for Toyota\'s Real-Time Inventory application.',
       'Enhancing the quality of inventory application used by dealerships based on user-escalated defects.',
       'Translate wireframes into interactive, dynamic code.',
@@ -91,7 +91,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     const typed = new Typed('#typewriter', {
-      strings: ['Associate Software Engineer<span style=\'color: #e64a19\'><br>at </span>^600Toyota^4000', 'Frt End Dev', 'Front End Dev^4000'],
+      strings: ['Senior Associate UI Developer<span style=\'color: #e64a19\'><br>at </span>^600Toyota^4000', 'Frt End Dev', 'Front End Dev^4000'],
       smartBackspace: true,
       loop: true,
       typeSpeed: 80,
