@@ -20,13 +20,16 @@ export class HomeComponent implements OnInit {
       description: ['Single-page gardening reminder app. Users receive custom reminders based on local climate, plant type and age.', 'Track each plant in your garden from the seed phase to the harvest phase.', 'Search Dig-It\'s crowdsourced database to find detailed growing information.', 'Receive custom reminders based on your local climate, the plant\'s growth conditions, and maturity stage for when to sow, water, or otherwise care for your plants.'],
       media: [
         {path: this.imgSrc + 'Dig-It1.png', caption: 'Dig-It homepage'},
-        {path: this.imgSrc + 'Dig-It2.png', caption: 'Login / Register'},
-        {path: this.imgSrc + 'Dig-It3.png', caption: 'View your garden and active gardening reminders.'},
-        {path: this.imgSrc + 'Dig-It4.png', caption: 'View basic plant info, upcoming reminders, and sowing and harvesting instructions.'},
-        {path: this.imgSrc + 'Dig-It5.png', caption: 'Upload and crop your own images to customize your garden.'},
-        {path: this.imgSrc + 'Dig-It6.png', caption: 'Search Dig-It\'s crowdsourced plant database.'},
-        {path: this.imgSrc + 'Dig-It7.png', caption: 'Filter plants by type, life cycle, and optimal sun requirements.'},
-        {path: this.imgSrc + 'Dig-It8.png', caption: 'Add a new plant to Dig-It\'s database.'},
+        {path: this.imgSrc + 'Dig-It2.png', caption: 'Dig-It homepage details'},
+        {path: this.imgSrc + 'Dig-It3.png', caption: 'About Dig-It header'},
+        {path: this.imgSrc + 'Dig-It4.png', caption: 'How Dig-It\'s calculates the optimal gardening schedule.'},
+        {path: this.imgSrc + 'Dig-It5.png', caption: 'Login / Register'},
+        {path: this.imgSrc + 'Dig-It6.png', caption: 'View your garden and active gardening reminders.'},
+        {path: this.imgSrc + 'Dig-It7.png', caption: 'View basic plant info, upcoming reminders, and sowing and harvesting instructions.'},
+        {path: this.imgSrc + 'Dig-It8.png', caption: 'Upload and crop your own images to customize your garden.'},
+        {path: this.imgSrc + 'Dig-It9.png', caption: 'Search Dig-It\'s crowdsourced plant database.'},
+        {path: this.imgSrc + 'Dig-It10.png', caption: 'Filter plants by type, life cycle, and optimal sun requirements.'},
+        {path: this.imgSrc + 'Dig-It11.png', caption: 'Add a new plant to Dig-It\'s database.'},
       ], githubHref: 'https://github.com/roberthelmick08/Dig-It', liveHref: 'http://dig-it.rh-codes.com', techsUsed: ['Angular', 'MongoDB', 'Node.js', 'HTML', 'SCSS']
     },
     {
